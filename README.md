@@ -1,7 +1,7 @@
 # VexRiscv SoC
 VexRiscv SoC is a platform for developing RISC-V CPU based hardware and software which was simpified from [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc). You can develop and integrate custom design into this platform, then vefify their functionality with open source toolchain.
 
-![Caravel_blocks](https://user-images.githubusercontent.com/11850122/220771595-250f3dfd-8eb9-4216-9a63-91d4c40e28de.png)
+<img src="https://user-images.githubusercontent.com/11850122/220771595-250f3dfd-8eb9-4216-9a63-91d4c40e28de.png" width=80%>
 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
 
