@@ -1,0 +1,37 @@
+# Headers
+-v ../../rtl/header/defines.v
+-v ../../rtl/header/user_defines.v
+
+# User project
+-v ../../rtl/user/user_project_wrapper.v
+-v ../../rtl/user/user_proj_example.counter.v
+
+## VIP
+-v ../../vip/tbuart.v
+-v ../../vip/spiflash.v
+
+## DFFRAM Behavioral Model
+-v ../../vip/RAM256.v
+-v ../../vip/RAM128.v
+
+# Mgmt Core Wrapper
+-v ../../rtl/soc/mgmt_core.v
+-v ../../rtl/soc/mgmt_core_wrapper.v
+-v ../../rtl/soc/VexRiscv_MinDebugCache.v
+
+## These blocks need to stay in RTL
+-v ../../rtl/soc/pads.v			
+-v ../../rtl/soc/mprj_io.v
+
+## These blocks only needed for RTL sims							     
+-v ../../rtl/soc/housekeeping_spi.v
+
+# -v $(CARAVEL_PATH)/rtl_new/chip_io_alt.v				     
+-v ../../rtl/soc/chip_io.v 		     
+-v ../../rtl/soc/gpio_control_block.v	     
+-v ../../rtl/soc/gpio_defaults_block.v	     
+-v ../../rtl/soc/housekeeping.v		     
+-v ../../rtl/soc/caravel.v 	
+
+## STD CELLS - they need to be below the defines.v files 
+-v ../../cvc-pdk/sky130_sram_2kbyte_1rw1r_32x512_8.v

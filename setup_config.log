@@ -1,0 +1,122 @@
+kevin@boledulab:~$ sudo apt install iverilog gtkwave vim python gcc -y
+[sudo] password for kevin:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Note, selecting 'python-is-python2' instead of 'python'
+gcc is already the newest version (4:9.3.0-1ubuntu2).
+python-is-python2 is already the newest version (2.7.17-4).
+vim is already the newest version (2:8.1.2269-1ubuntu5.11).
+The following additional packages will be installed:
+  libjudydebian1
+The following NEW packages will be installed:
+  gtkwave iverilog libjudydebian1
+0 upgraded, 3 newly installed, 0 to remove and 141 not upgraded.
+Need to get 4320 kB of archives.
+After this operation, 11.6 MB of additional disk space will be used.
+Get:1 http://tw.archive.ubuntu.com/ubuntu focal/universe amd64 libjudydebian1 amd64 1.0.5-5 [94.6 kB]
+Get:2 http://tw.archive.ubuntu.com/ubuntu focal/universe amd64 gtkwave amd64 3.3.103-1build1 [2366 kB]
+Get:3 http://tw.archive.ubuntu.com/ubuntu focal/universe amd64 iverilog amd64 10.3-1build1 [1859 kB]
+Fetched 4320 kB in 1s (8584 kB/s)
+Selecting previously unselected package libjudydebian1.
+(Reading database ... 360257 files and directories currently installed.)
+Preparing to unpack .../libjudydebian1_1.0.5-5_amd64.deb ...
+Unpacking libjudydebian1 (1.0.5-5) ...
+Selecting previously unselected package gtkwave.
+Preparing to unpack .../gtkwave_3.3.103-1build1_amd64.deb ...
+Unpacking gtkwave (3.3.103-1build1) ...
+Selecting previously unselected package iverilog.
+Preparing to unpack .../iverilog_10.3-1build1_amd64.deb ...
+Unpacking iverilog (10.3-1build1) ...
+Setting up libjudydebian1 (1.0.5-5) ...
+Setting up iverilog (10.3-1build1) ...
+Setting up gtkwave (3.3.103-1build1) ...
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for shared-mime-info (1.15-1) ...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.4) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
+kevin@boledulab:~$ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+--2023-02-22 21:56:43--  https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+Resolving github.com (github.com)... 20.27.177.113
+Connecting to github.com (github.com)|20.27.177.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/331055995/c0504c69-25f8-4355-acbc-b492df96424e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230222%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230222T135644Z&X-Amz-Expires=300&X-Amz-Signature=392ebcdb4b3a6bc867c7b6bf1a65086a5e20a99b1a8a91cdb760504f806b82bd&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=331055995&response-content-disposition=attachment%3B%20filename%3Driscv32-unknown-elf.gcc-12.1.0.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-02-22 21:56:44--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/331055995/c0504c69-25f8-4355-acbc-b492df96424e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230222%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230222T135644Z&X-Amz-Expires=300&X-Amz-Signature=392ebcdb4b3a6bc867c7b6bf1a65086a5e20a99b1a8a91cdb760504f806b82bd&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=331055995&response-content-disposition=attachment%3B%20filename%3Driscv32-unknown-elf.gcc-12.1.0.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.110.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 524353172 (500M) [application/octet-stream]
+Saving to: ‘/tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz’
+
+/tmp/riscv32-unknown-elf.gcc-12.1.0.tar 100%[=============================================================================>] 500.06M  5.27MB/s    in 2m 37s
+
+2023-02-22 21:59:22 (3.19 MB/s) - ‘/tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz’ saved [524353172/524353172]
+
+kevin@boledulab:~$ sudo mkdir /opt/riscv
+kevin@boledulab:~$ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
+kevin@boledulab:~$ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
+--2023-02-22 21:59:48--  https://www.vim.org/scripts/download_script.php?src_id=28365
+Resolving www.vim.org (www.vim.org)... 44.237.4.221
+Connecting to www.vim.org (www.vim.org)|44.237.4.221|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/octetstream]
+Saving to: ‘/tmp/vtags-3.11.tar.gz’
+
+/tmp/vtags-3.11.tar.gz                      [   <=>                                                                        ] 472.94K   606KB/s    in 0.8s
+
+2023-02-22 21:59:50 (606 KB/s) - ‘/tmp/vtags-3.11.tar.gz’ saved [484287]
+
+kevin@boledulab:~$ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
+kevin@boledulab:~$ python /opt/vtags-3.11/vim_glb_config.py
+kevin@boledulab:~$ git clone https://github.com/bol-edu/vexriscv_soc
+Cloning into 'vexriscv_soc'...
+remote: Enumerating objects: 310, done.
+remote: Counting objects: 100% (224/224), done.
+remote: Compressing objects: 100% (133/133), done.
+remote: Total 310 (delta 141), reused 144 (delta 91), pack-reused 86
+Receiving objects: 100% (310/310), 192.68 KiB | 1.97 MiB/s, done.
+Resolving deltas: 100% (163/163), done.
+kevin@boledulab:~$ cd vexriscv_soc/
+kevin@boledulab:~/vexriscv_soc$ python /opt/vtags-3.11/vtags.py
+________________________________________________________________________________________________
+______________________________________Add Support Postfix_______________________________________
+*                                                                                              *
+* Default config only treat "xxx.v" as verilog design files.                                   *
+* If you have other valid postfix please add it to :                                           *
+*   vtags.db/vim_local_config.py   : support_verilog_postfix= [...] (only change local config) *
+*   or                                                                                         *
+*   vtags-2.xx/vim_local_config.py : support_verilog_postfix= [...] (change global config)     *
+* Such as:                                                                                     *
+*   support_verilog_postfix= ['v', 'V', 'd'] // add xxx.V, xxx.d as valid verilog design files *
+*______________________________________________________________________________________________*
+
+Parsering FileList ...
+_________________________________________________________________________________
+____________________________________TAKE CARE____________________________________
+*                                                                               *
+* Generated "vtags.db" put in current dir(./)                                   *
+* If you want active vtags in other folders in filelist, you need add soft link *
+* manually.                                                                     *
+* Folders in filelist:                                                          *
+*   /home/kevin/vexriscv_soc                                                    *
+* Such as:                                                                      *
+*   ln -s ./vtags.db /home/kevin/vexriscv_soc                                   *
+*_______________________________________________________________________________*
+
+Parsering Design Files ...
+sh: /opt/vtags-3.11/Parser/parser: No such file or directory
+
+Call C-Parser Failed, Try Compiling C-parser ...
+Compile C-parser Success !
+[###########################################################][28/28][/]
+kevin@boledulab:~/vexriscv_soc$ rm -rf vtags.db/
+kevin@boledulab:~/vexriscv_soc$ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
+kevin@boledulab:~/vexriscv_soc$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+kevin@boledulab:~/vexriscv_soc$ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
+kevin@boledulab:~/vexriscv_soc$ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
+kevin@boledulab:~/vexriscv_soc$ source ~/.bashrc
+kevin@boledulab:~/vexriscv_soc$
