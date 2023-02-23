@@ -22,8 +22,8 @@ More detail can be found in [Caravel's system specification](https://github.com/
     sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
     sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
     python /opt/vtags-3.11/vim_glb_config.py
-    git clone https://github.com/bol-edu/vexriscv_soc
-    cd vexriscv_soc/
+    git clone https://github.com/bol-edu/caravel_soc
+    cd caravel_soc/
     python /opt/vtags-3.11/vtags.py
     rm -rf vtags.db/
     chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
@@ -32,23 +32,23 @@ More detail can be found in [Caravel's system specification](https://github.com/
     echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
     source ~/.bashrc
 
-validate your [setup & config](https://github.com/kevinjantw/vexriscv_soc/blob/main/setup_config.log)
+validate your [setup & config](https://github.com/kevinjantw/caravel_soc/blob/main/setup_config.log)
 
 ## Testbenches for custom designs
-In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from vexriscv_soc modules and corresponded testbench module.
+In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel_soc modules and corresponded testbench module.
 
 * Counter with (LA) logic analyzer interface 
   * 32-bit LA input  
   * 32-bit LA output
   * 16-bit mrpj_io as output  
   ##################################################  
-  vexriscv_soc/testbench/counter_la/counter_la.c  
-  vexriscv_soc/testbench/counter_la/counter_la_tb.v  
-  vexriscv_soc/testbench/counter_la/include.rtl.list  
-  vexriscv_soc/testbench/counter_la/run_sim  
-  vexriscv_soc/testbench/counter_la/waveform.gtkw  
+  caravel_soc/testbench/counter_la/counter_la.c  
+  caravel_soc/testbench/counter_la/counter_la_tb.v  
+  caravel_soc/testbench/counter_la/include.rtl.list  
+  caravel_soc/testbench/counter_la/run_sim  
+  caravel_soc/testbench/counter_la/waveform.gtkw  
   ##################################################  
-  /vexriscv_soc/testbench/counter_la$ ./run_sim  
+  /caravel_soc/testbench/counter_la$ ./run_sim  
   Reading counter_la.hex  
   counter_la.hex loaded into memory  
   Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
@@ -56,7 +56,7 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
   LA Test 1 started  
   output:  
   LA Test 2 passed  
-  /vexriscv_soc/testbench/counter_la$ gtkwave waveform.gtkw  
+  /caravel_soc/testbench/counter_la$ gtkwave waveform.gtkw  
 
 ![counter_la_waveform](https://user-images.githubusercontent.com/11850122/220594971-0dc2047d-6883-445e-944e-4cc736c0ab7e.png)
   
@@ -65,20 +65,20 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
   * 32-bit wishbone output
   * 16-bit mrpj_io as output  
   ##################################################  
-  vexriscv_soc/testbench/counter_la/counter_wb.c  
-  vexriscv_soc/testbench/counter_la/counter_wb_tb.v  
-  vexriscv_soc/testbench/counter_la/include.rtl.list  
-  vexriscv_soc/testbench/counter_la/run_sim  
-  vexriscv_soc/testbench/counter_la/waveform.gtkw  
+  caravel_soc/testbench/counter_la/counter_wb.c  
+  caravel_soc/testbench/counter_la/counter_wb_tb.v  
+  caravel_soc/testbench/counter_la/include.rtl.list  
+  caravel_soc/testbench/counter_la/run_sim  
+  caravel_soc/testbench/counter_la/waveform.gtkw  
   ##################################################  
-  vexriscv_soc/testbench/counter_wb$ ./run_sim  
+  caravel_soc/testbench/counter_wb$ ./run_sim  
   Reading counter_wb.hex  
   counter_wb.hex loaded into memory  
   Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
   VCD info: dumpfile counter_wb.vcd opened for output.  
   Monitor: MPRJ-Logic WB Started  
   Monitor: Mega-Project WB (RTL) Passed  
-  vexriscv_soc/testbench/counter_wb$ gtkwave waveform.gtkw  
+  caravel_soc/testbench/counter_wb$ gtkwave waveform.gtkw  
 
 ![counter_wb_waveform](https://user-images.githubusercontent.com/11850122/220597221-3a266f07-1525-4c64-92a8-216b5fe82e25.png)
    
@@ -87,13 +87,13 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
   * 32-bit LA output
   * 16-bit mrpj_io as output  
   ##################################################  
-  vexriscv_soc/testbench/gcd_la/gcd_la.c  
-  vexriscv_soc/testbench/gcd_la/gcd_la_tb.v  
-  vexriscv_soc/testbench/gcd_la/include.rtl.list  
-  vexriscv_soc/testbench/gcd_la/run_sim  
-  vexriscv_soc/testbench/gcd_la/waveform.gtkw  
+  caravel_soc/testbench/gcd_la/gcd_la.c  
+  caravel_soc/testbench/gcd_la/gcd_la_tb.v  
+  caravel_soc/testbench/gcd_la/include.rtl.list  
+  caravel_soc/testbench/gcd_la/run_sim  
+  caravel_soc/testbench/gcd_la/waveform.gtkw  
   ##################################################   
-  vexriscv_soc/testbench/gcd_la$ ./run_sim  
+  caravel_soc/testbench/gcd_la$ ./run_sim  
   Reading gcd_la.hex  
   gcd_la.hex loaded into memory  
   Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
@@ -108,15 +108,15 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
   LA Test seq_gcd(1924134885, 3151131255)=135 passed  
   LA Test seq_gcd(992211318, 512609597)=1 started  
   LA Test seq_gcd(992211318, 512609597)=1 passed  
-  vexriscv_soc/testbench/gcd_la$ gtkwave waveform.gtkw  
+  caravel_soc/testbench/gcd_la$ gtkwave waveform.gtkw  
  
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
 ## Trace verilog code with vim + vtags
 We use vim + vtags to help signal trace source. First case, a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
 
-vexriscv_soc$ vtags  
-vexriscv_soc$ vim vtags.db/  
+caravel_soc$ vtags  
+caravel_soc$ vim vtags.db/  
 ----------------Top Module List-------------  
 0   : counter_la_tb  
 1   : counter_wb_tb  
@@ -126,7 +126,7 @@ vexriscv_soc$ vim vtags.db/
 5   : wb_rw_test  
 Choise Top Module To Open (0-5):  
 3  
-"~/vexriscv_soc/testbench/gcd_la/gcd_la_tb.v" 275L, 12459C  
+"~/caravel_soc/testbench/gcd_la/gcd_la_tb.v" 275L, 12459C  
 Press ENTER or type command to continue  
 ENTER
 
