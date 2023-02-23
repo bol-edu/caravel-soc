@@ -17,20 +17,20 @@ More detail can be found in [Caravel's system specification](https://github.com/
 
     sudo apt install iverilog gtkwave vim python gcc -y
     sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
-    sudo mkdir /opt/riscv
-    sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
-    sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
-    sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
-    python /opt/vtags-3.11/vim_glb_config.py
-    git clone https://github.com/bol-edu/caravel-soc
-    cd caravel-soc/
-    python /opt/vtags-3.11/vtags.py
-    rm -rf vtags.db/
-    chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
-    echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
-    echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
-    echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
-    source ~/.bashrc
+    $ sudo mkdir /opt/riscv
+    $ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
+    $ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
+    $ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
+    $ python /opt/vtags-3.11/vim_glb_config.py
+    $ git clone https://github.com/bol-edu/caravel-soc
+    $ cd caravel-soc/
+    $ python /opt/vtags-3.11/vtags.py
+    $ rm -rf vtags.db/
+    $ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
+    $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+    $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
+    $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
+    $ source ~/.bashrc
 
 validate your [setup & config](https://github.com/kevinjantw/caravel-soc/blob/main/setup_config.log)
 
