@@ -156,7 +156,7 @@ Another case, we demonstrate to find a signal *clock* drive target from gcd_la_t
 ＜Space＞＜Right＞ at gcd_la_tb.v:21
 ![clock_drive_01](https://user-images.githubusercontent.com/11850122/220786310-33e5244d-0d6c-4e63-887d-e220745ee2fa.png)
 
-vtags shows *clock* connected to caravel module at gcd_la_tb.v:248 (current line) then ＜Space＞＜Right＞ at *clock*
+vtags shows *clock* connected to caravel module at gcd_la_tb.v:248 then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_02](https://user-images.githubusercontent.com/11850122/221049213-5b727542-42a4-44f9-aaf3-ae0af4f4ecfa.png
 
 found *clock* at caravel.v:85 then ＜Space＞＜Right＞ at *clock*
