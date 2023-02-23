@@ -145,7 +145,7 @@ vim goto gcd_la_tb.v:250
 found *mprj_io* at caravel.v:84
 ![mprj_io_trace_05](https://user-images.githubusercontent.com/11850122/221044644-638d140f-1e41-40bf-becd-d81b5833cce3.png)
 
-vim searches *mprj_io* connected to chip_io module at cavavel.v:345 then ＜Space＞＜Left＞ at *mprj_io*
+vim searches *mprj_io* connected to chip_io module at cavavel.v:345, then ＜Space＞＜Left＞ at *mprj_io*
 ![mprj_io_trace_06](https://user-images.githubusercontent.com/11850122/221045046-95b8fae0-007b-4f7c-b70f-ac7590e49a4a.png)
 
 *mprj_io* at chip_io.v:92
@@ -156,20 +156,20 @@ Another case, we demonstrate to find a signal *clock* drive target from gcd_la_t
 ＜Space＞＜Right＞ at gcd_la_tb.v:21
 ![clock_drive_01](https://user-images.githubusercontent.com/11850122/220786310-33e5244d-0d6c-4e63-887d-e220745ee2fa.png)
 
-vtags shows *clock* connected to caravel module at gcd_la_tb.v:248 then ＜Space＞＜Right＞ at *clock*
+vtags shows *clock* connected to caravel module at gcd_la_tb.v:248 (current line), then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_02](https://user-images.githubusercontent.com/11850122/221049213-5b727542-42a4-44f9-aaf3-ae0af4f4ecfa.png)
 
 found *clock* at caravel.v:85 then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_03](https://user-images.githubusercontent.com/11850122/221049862-8f8bdc8e-a3df-4395-a8a9-7bc2ff360864.png)
 
-found *clock* connected to chip_io module at caravel.v:346 then ＜Space＞＜Right＞ at *clock*
+found *clock* connected to chip_io module at caravel.v:346, then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_04](https://user-images.githubusercontent.com/11850122/221050081-03dc25e3-4bf0-4ff3-ab0e-d9efc11773ef.png)
 
 found *clock* at chip_io.v:62 then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_05](https://user-images.githubusercontent.com/11850122/221050329-d9aa378f-450c-4ec6-8687-cf1bfe24756d.png)
 
-found *clock* connected to *clock_core* at chip_io.v:140 then ＜Space＞＜Right＞ at *clock_core*
-![clock_drive_06](https://user-images.githubusercontent.com/11850122/221050898-f9d8dbed-b085-4b5d-bfc4-3b3655f51b2d.png)
+found *clock* connected to *clock_core* at chip_io.v:140, then ＜Space＞＜Right＞ at *clock_core*
+![clock_drive_06](https://user-images.githubusercontent.com/11850122/221052241-8f5407cf-2cda-4add-a296-db4de470dbf5.png)
 
 found *clock_core* declaration at chip_io.v:72
 ![clock_drive_07](https://user-images.githubusercontent.com/11850122/221051163-2d8ef061-3575-47c6-addf-4fb2835a1be8.png)
