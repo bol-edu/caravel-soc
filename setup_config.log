@@ -72,16 +72,16 @@ Saving to: ‘/tmp/vtags-3.11.tar.gz’
 
 kevin@boledulab:~$ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
 kevin@boledulab:~$ python /opt/vtags-3.11/vim_glb_config.py
-kevin@boledulab:~$ git clone https://github.com/bol-edu/vexriscv_soc
-Cloning into 'vexriscv_soc'...
+kevin@boledulab:~$ git clone https://github.com/bol-edu/caravel_soc
+Cloning into 'caravel_soc'...
 remote: Enumerating objects: 310, done.
 remote: Counting objects: 100% (224/224), done.
 remote: Compressing objects: 100% (133/133), done.
 remote: Total 310 (delta 141), reused 144 (delta 91), pack-reused 86
 Receiving objects: 100% (310/310), 192.68 KiB | 1.97 MiB/s, done.
 Resolving deltas: 100% (163/163), done.
-kevin@boledulab:~$ cd vexriscv_soc/
-kevin@boledulab:~/vexriscv_soc$ python /opt/vtags-3.11/vtags.py
+kevin@boledulab:~$ cd caravel_soc/
+kevin@boledulab:~/caravel_soc$ python /opt/vtags-3.11/vtags.py
 ________________________________________________________________________________________________
 ______________________________________Add Support Postfix_______________________________________
 *                                                                                              *
@@ -102,9 +102,9 @@ ____________________________________TAKE CARE___________________________________
 * If you want active vtags in other folders in filelist, you need add soft link *
 * manually.                                                                     *
 * Folders in filelist:                                                          *
-*   /home/kevin/vexriscv_soc                                                    *
+*   /home/kevin/caravel_soc                                                    *
 * Such as:                                                                      *
-*   ln -s ./vtags.db /home/kevin/vexriscv_soc                                   *
+*   ln -s ./vtags.db /home/kevin/caravel_soc                                   *
 *_______________________________________________________________________________*
 
 Parsering Design Files ...
@@ -113,10 +113,10 @@ sh: /opt/vtags-3.11/Parser/parser: No such file or directory
 Call C-Parser Failed, Try Compiling C-parser ...
 Compile C-parser Success !
 [###########################################################][28/28][/]
-kevin@boledulab:~/vexriscv_soc$ rm -rf vtags.db/
-kevin@boledulab:~/vexriscv_soc$ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
-kevin@boledulab:~/vexriscv_soc$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
-kevin@boledulab:~/vexriscv_soc$ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
-kevin@boledulab:~/vexriscv_soc$ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
-kevin@boledulab:~/vexriscv_soc$ source ~/.bashrc
-kevin@boledulab:~/vexriscv_soc$
+kevin@boledulab:~/caravel_soc$ rm -rf vtags.db/
+kevin@boledulab:~/caravel_soc$ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
+kevin@boledulab:~/caravel_soc$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+kevin@boledulab:~/caravel_soc$ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
+kevin@boledulab:~/caravel_soc$ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
+kevin@boledulab:~/caravel_soc$ source ~/.bashrc
+kevin@boledulab:~/caravel_soc$
