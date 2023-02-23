@@ -113,7 +113,7 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
 ## Trace Verilog Code with Vim + vtags
-We use vim + vtags to help signal trace source. First case, a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
+We use vim + vtags to find signal trace source/drive target. First case, we demonstrate a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
 
 caravel-soc$ vtags  
 caravel-soc$ vim vtags.db/  
