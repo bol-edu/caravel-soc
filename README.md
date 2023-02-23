@@ -165,7 +165,7 @@ found *clock* at caravel.v:85, then ＜Space＞＜Right＞ at *clock*
 found *clock* connected to chip_io module at caravel.v:346, then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_04](https://user-images.githubusercontent.com/11850122/221050081-03dc25e3-4bf0-4ff3-ab0e-d9efc11773ef.png)
 
-found *clock* at chip_io.v:62 then ＜Space＞＜Right＞ at *clock*
+found *clock* at chip_io.v:62, then ＜Space＞＜Right＞ at *clock*
 ![clock_drive_05](https://user-images.githubusercontent.com/11850122/221050329-d9aa378f-450c-4ec6-8687-cf1bfe24756d.png)
 
 found *clock* connected to *clock_core* at chip_io.v:140, then ＜Space＞＜Right＞ at *clock_core*
