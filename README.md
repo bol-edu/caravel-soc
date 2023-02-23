@@ -156,26 +156,23 @@ Another case, we demonstrate to find a signal *clock* drive target from gcd_la_t
 ＜Space＞＜Right＞ at gcd_la_tb.v:21
 ![clock_drive_01](https://user-images.githubusercontent.com/11850122/220786310-33e5244d-0d6c-4e63-887d-e220745ee2fa.png)
 
-vtags shows *clock* connected to caravel module at gcd_la_tb.v:248
-![clock_drive_02](https://user-images.githubusercontent.com/11850122/220786946-a8c01e98-a525-4b30-adb8-d5dd9f487688.png)
-
-vim goto gcd_la_tb.v:248 then ＜Space＞＜Right＞ at *clock*
-![clock_drive_03](https://user-images.githubusercontent.com/11850122/220788223-73e071a3-3b7e-4f34-b844-4731ef7cb53b.png)
+vtags shows *clock* connected to caravel module at gcd_la_tb.v:248 (current line) then ＜Space＞＜Right＞ at *clock*
+![clock_drive_02](https://user-images.githubusercontent.com/11850122/221049213-5b727542-42a4-44f9-aaf3-ae0af4f4ecfa.png
 
 found *clock* at caravel.v:85 then ＜Space＞＜Right＞ at *clock*
-![clock_drive_04](https://user-images.githubusercontent.com/11850122/220788441-42210697-0ccd-47b4-9b5d-7b914dae627d.png)
+![clock_drive_03](https://user-images.githubusercontent.com/11850122/221049862-8f8bdc8e-a3df-4395-a8a9-7bc2ff360864.png)
 
 found *clock* connected to chip_io module at caravel.v:346 then ＜Space＞＜Right＞ at *clock*
-![clock_drive_05](https://user-images.githubusercontent.com/11850122/220788689-af6fbec1-81af-474b-b74c-3a1e8aa6e79d.png)
+![clock_drive_04](https://user-images.githubusercontent.com/11850122/221050081-03dc25e3-4bf0-4ff3-ab0e-d9efc11773ef.png)
 
-found *clock* at chip_io.v:61 then ＜Space＞＜Right＞ at *clock*
-![clock_drive_06](https://user-images.githubusercontent.com/11850122/220789214-4cb756c8-a514-43c5-a68e-eddbdcb68207.png)
+found *clock* at chip_io.v:62 then ＜Space＞＜Right＞ at *clock*
+![clock_drive_05](https://user-images.githubusercontent.com/11850122/221050329-d9aa378f-450c-4ec6-8687-cf1bfe24756d.png)
 
 found *clock* connected to *clock_core* at chip_io.v:140 then ＜Space＞＜Right＞ at *clock_core*
-![clock_drive_07](https://user-images.githubusercontent.com/11850122/220789814-faf69080-ac2c-4f4f-adb4-2ab21b786775.png)
+![clock_drive_06](https://user-images.githubusercontent.com/11850122/221050898-f9d8dbed-b085-4b5d-bfc4-3b3655f51b2d.png)
 
 found *clock_core* declaration at chip_io.v:72
-![clock_drive_08](https://user-images.githubusercontent.com/11850122/220790186-f25933ac-8860-477c-97ba-9f61cdae311d.png)
+![clock_drive_07](https://user-images.githubusercontent.com/11850122/221051163-2d8ef061-3575-47c6-addf-4fb2835a1be8.png)
 
 ## Toolchain Reference Manual
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
