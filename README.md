@@ -15,8 +15,8 @@ More detail can be found in [Caravel's system specification](https://github.com/
 
 ## Setup and Config
 
-    sudo apt install iverilog gtkwave vim python gcc -y
-    sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+    $ sudo apt install iverilog gtkwave vim python gcc -y
+    $ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
     $ sudo mkdir /opt/riscv
     $ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
     $ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
