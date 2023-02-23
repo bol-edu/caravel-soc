@@ -134,10 +134,10 @@ ENTER
 ![mprj_io_trace_01](https://user-images.githubusercontent.com/11850122/220661210-ea1533cf-edd6-4d1a-b342-4d2cd154956f.png)
 
 vtags shows *mprj_io* connected to caravel module at gcd_la_tb.v:250
-![mprj_io_trace_02](https://user-images.githubusercontent.com/11850122/220661770-9ceca160-e09f-4a56-921b-e93ff7cc44b6.png)
+![mprj_io_trace_02](https://user-images.githubusercontent.com/11850122/221042505-377fe242-7d9e-43ae-97f5-540f5a4dd6ba.png)
 
 vim goto gcd_la_tb.v:250
-![mprj_io_trace_03](https://user-images.githubusercontent.com/11850122/220662335-1a5faf8a-a511-40b0-9724-03cbefa32b24.png)
+![mprj_io_trace_03](https://user-images.githubusercontent.com/11850122/221042971-450f4e17-ce72-413c-af81-a68b1e6a10be.png)
 
 ＜Space＞＜Left＞ *mprj_io* at gcd_la_tb.v:250
 ![mprj_io_trace_04](https://user-images.githubusercontent.com/11850122/220664219-67a6ddb2-c2dd-45f8-a5b3-279a3ccb44d4.png)
