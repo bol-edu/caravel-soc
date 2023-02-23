@@ -1,4 +1,4 @@
-kevin@boledulab:~$ sudo apt install iverilog gtkwave vim python gcc -y
+hls05@HLS05:~$ sudo apt install iverilog gtkwave vim python gcc -y
 [sudo] password for kevin:
 Reading package lists... Done
 Building dependency tree
@@ -39,7 +39,7 @@ Processing triggers for hicolor-icon-theme (0.17-2) ...
 Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
 Processing triggers for libglib2.0-0:amd64 (2.64.6-1~ubuntu20.04.4) ...
 Processing triggers for libc-bin (2.31-0ubuntu9.7) ...
-kevin@boledulab:~$ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+hls05@HLS05:~$ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
 --2023-02-22 21:56:43--  https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
 Resolving github.com (github.com)... 20.27.177.113
 Connecting to github.com (github.com)|20.27.177.113|:443... connected.
@@ -56,9 +56,9 @@ Saving to: ‘/tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz’
 
 2023-02-22 21:59:22 (3.19 MB/s) - ‘/tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz’ saved [524353172/524353172]
 
-kevin@boledulab:~$ sudo mkdir /opt/riscv
-kevin@boledulab:~$ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
-kevin@boledulab:~$ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
+hls05@HLS05:~$ sudo mkdir /opt/riscv
+hls05@HLS05:~$ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
+hls05@HLS05:~$ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
 --2023-02-22 21:59:48--  https://www.vim.org/scripts/download_script.php?src_id=28365
 Resolving www.vim.org (www.vim.org)... 44.237.4.221
 Connecting to www.vim.org (www.vim.org)|44.237.4.221|:443... connected.
@@ -70,9 +70,9 @@ Saving to: ‘/tmp/vtags-3.11.tar.gz’
 
 2023-02-22 21:59:50 (606 KB/s) - ‘/tmp/vtags-3.11.tar.gz’ saved [484287]
 
-kevin@boledulab:~$ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
-kevin@boledulab:~$ python /opt/vtags-3.11/vim_glb_config.py
-kevin@boledulab:~$ git clone https://github.com/bol-edu/caravel-soc
+hls05@HLS05:~$ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
+hls05@HLS05:~$ python /opt/vtags-3.11/vim_glb_config.py
+hls05@HLS05:~$ git clone https://github.com/bol-edu/caravel-soc
 Cloning into 'caravel-soc'...
 remote: Enumerating objects: 310, done.
 remote: Counting objects: 100% (224/224), done.
@@ -80,8 +80,8 @@ remote: Compressing objects: 100% (133/133), done.
 remote: Total 310 (delta 141), reused 144 (delta 91), pack-reused 86
 Receiving objects: 100% (310/310), 192.68 KiB | 1.97 MiB/s, done.
 Resolving deltas: 100% (163/163), done.
-kevin@boledulab:~$ cd caravel-soc/
-kevin@boledulab:~/caravel-soc$ python /opt/vtags-3.11/vtags.py
+hls05@HLS05:~$ cd caravel-soc/
+hls05@HLS05:~/caravel-soc$ python /opt/vtags-3.11/vtags.py
 ________________________________________________________________________________________________
 ______________________________________Add Support Postfix_______________________________________
 *                                                                                              *
@@ -113,10 +113,10 @@ sh: /opt/vtags-3.11/Parser/parser: No such file or directory
 Call C-Parser Failed, Try Compiling C-parser ...
 Compile C-parser Success !
 [###########################################################][28/28][/]
-kevin@boledulab:~/caravel-soc$ rm -rf vtags.db/
-kevin@boledulab:~/caravel-soc$ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
-kevin@boledulab:~/caravel-soc$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
-kevin@boledulab:~/caravel-soc$ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
-kevin@boledulab:~/caravel-soc$ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
-kevin@boledulab:~/caravel-soc$ source ~/.bashrc
-kevin@boledulab:~/caravel-soc$
+hls05@HLS05:~/caravel-soc$ rm -rf vtags.db/
+hls05@HLS05:~/caravel-soc$ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
+hls05@HLS05:~/caravel-soc$ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+hls05@HLS05:~/caravel-soc$ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
+hls05@HLS05:~/caravel-soc$ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
+hls05@HLS05:~/caravel-soc$ source ~/.bashrc
+hls05@HLS05:~/caravel-soc$
