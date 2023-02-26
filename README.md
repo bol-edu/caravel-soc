@@ -145,7 +145,7 @@ vim goto gcd_la_tb.v:250
 found *mprj_io* at caravel.v:84
 ![mprj_io_trace_05](https://user-images.githubusercontent.com/11850122/221044644-638d140f-1e41-40bf-becd-d81b5833cce3.png)
 
-vim searches *mprj_io* connected to chip_io module at cavavel.v:345, then ＜Space＞＜Left＞ at *mprj_io*
+because vtags can't fully parse dependencies of caravel.v, we use vim to find *mprj_io* connected to chip_io module at cavavel.v:345, then ＜Space＞＜Left＞ at *mprj_io*
 ![mprj_io_trace_06](https://user-images.githubusercontent.com/11850122/221045046-95b8fae0-007b-4f7c-b70f-ac7590e49a4a.png)
 
 *mprj_io* at chip_io.v:92
