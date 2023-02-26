@@ -174,7 +174,10 @@ found *clock* connected to *clock_core* at chip_io.v:140, then ＜Space＞＜Rig
 found *clock_core* declaration at chip_io.v:72
 ![clock_drive_07](https://user-images.githubusercontent.com/11850122/221051163-2d8ef061-3575-47c6-addf-4fb2835a1be8.png)
 
-## Toolchain Reference Manual
+## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
 * [GTKWave 3.3 Wave Analyzer User's Guide](https://gtkwave.sourceforge.net/gtkwave.pdf)
 * [vtags : verdi like, verilog code signal trace and show topo script](https://www.vim.org/scripts/script.php?script_id=5494)
+
+## Research Paper
+* [GHAZI: An Open-Source ASIC Implementation of RISC-V based SoC based SoC, 2022](https://www.techrxiv.org/articles/preprint/GHAZI_An_Open-Source_ASIC_Implementation_of_RISC-V_based_SoC/21770456)
