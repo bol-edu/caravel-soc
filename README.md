@@ -5,7 +5,7 @@ Caravel SoC is a platform for developing RISC-V CPU based hardware and software 
 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
 
-## Toolchain Prerequisite
+## Toolchain Prerequisites
 * [Ubuntu 20.04.5](https://releases.ubuntu.com/focal/)
 * [RISC-V GCC Toolchains rv32i-4.0.0](https://github.com/stnolting/riscv-gcc-prebuilt)
 * [Icarus Verilog v10.3](http://iverilog.icarus.com/)
@@ -34,7 +34,7 @@ More detail can be found in [Caravel's system specification](https://github.com/
 
 validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/setup_config.log)
 
-## Testbench for Custom Design
+## Testbenches for Custom Designs
 In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module.
 
 * Counter with (LA) logic analyzer interface 
@@ -174,10 +174,10 @@ found *clock* connected to *clock_core* at chip_io.v:140, then ＜Space＞＜Rig
 found *clock_core* declaration at chip_io.v:72
 ![clock_drive_07](https://user-images.githubusercontent.com/11850122/221051163-2d8ef061-3575-47c6-addf-4fb2835a1be8.png)
 
-## Toolchain Reference Manual
+## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
 * [GTKWave 3.3 Wave Analyzer User's Guide](https://gtkwave.sourceforge.net/gtkwave.pdf)
 * [vtags : verdi like, verilog code signal trace and show topo script](https://www.vim.org/scripts/script.php?script_id=5494)
 
-## Research Paper
+## Research Papers
 * [GHAZI: An Open-Source ASIC Implementation of RISC-V based SoC based SoC, 2022](https://www.techrxiv.org/articles/preprint/GHAZI_An_Open-Source_ASIC_Implementation_of_RISC-V_based_SoC/21770456)
