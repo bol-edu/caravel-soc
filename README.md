@@ -5,7 +5,7 @@ Caravel SoC is a platform for developing RISC-V CPU based hardware and software 
 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
 
-## Toolchain Prerequisites
+## Toolchain Prerequisite
 * [Ubuntu 20.04.5](https://releases.ubuntu.com/focal/)
 * [RISC-V GCC Toolchains rv32i-4.0.0](https://github.com/stnolting/riscv-gcc-prebuilt)
 * [Icarus Verilog v10.3](http://iverilog.icarus.com/)
@@ -34,7 +34,7 @@ More detail can be found in [Caravel's system specification](https://github.com/
 
 validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/setup_config.log)
 
-## Testbenches for Custom Designs
+## Testbenches for Custom Design
 In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module.
 
 * Counter with (LA) logic analyzer interface 
