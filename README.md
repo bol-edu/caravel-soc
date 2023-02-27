@@ -11,7 +11,7 @@ Caravel SoC is a platform for developing RISC-V CPU based hardware and software 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
 
 ## Toolchain Prerequisites
-* [Ubuntu 20.04.5](https://releases.ubuntu.com/focal/)
+* [Ubuntu 20.04+](https://releases.ubuntu.com/focal/)
 * [RISC-V GCC Toolchains rv32i-4.0.0](https://github.com/stnolting/riscv-gcc-prebuilt)
 * [Icarus Verilog v10.3](http://iverilog.icarus.com/)
 * [Icarus Verilog v12 + GTKWave Windows](https://bleyer.org/icarus/) (option)
