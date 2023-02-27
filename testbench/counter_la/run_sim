@@ -3,7 +3,7 @@ rm -f counter_la.hex
 riscv32-unknown-elf-gcc -Wl,--no-warn-rwx-segments -g \
 -I../../firmware \
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
--Wl,-Bstatic,-T,../../firmware/sections.lds,--strip-debug \
+-Wl,-Bstatic,-T,../../firmware/sections.lds,--strip-discarded \
 -ffreestanding -nostdlib -o counter_la.elf ../../firmware/crt0_vex.S ../../firmware/isr.c counter_la.c
 riscv32-unknown-elf-objcopy -O verilog counter_la.elf counter_la.hex
 # to fix flash base address
