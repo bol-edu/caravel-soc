@@ -39,6 +39,20 @@ More detail can be found in [Caravel's system specification](https://github.com/
 
 validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/setup_config.log)
 
+## Directory Structure
+
+    ├── cvc-pdk                 # SKY130 OpenRAM SRAM Model
+    ├── firmware                # Caravel System Firmware Libraries
+    ├── rtl                     # Caravel RTL Designs
+    │   ├── header              # Caravel Headers
+    │   ├── soc                 # Caravel SoC Designs
+    │   ├── user                # Caravel User Project Designs
+    ├── testbench               # Caravel Testbenches
+    │   ├── counter_la          # Counter with Logic Analyzer Interface
+    │   ├── counter_wb          # Counter with Wishbone Interface
+    │   └── gcd_la              # GCD with Logic Analyzer Interface
+    └── vip                     # Caravel Verification IP
+
 ## Testbenches for Custom Designs
 In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module.
 
