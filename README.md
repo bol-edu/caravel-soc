@@ -1,12 +1,12 @@
+## 全端IC設計工程師養成計劃 (FullStack IC Designer Development)
+The FullStack IC Designer Development will base on the [Caravel SoC](https://github.com/bol-edu/caravel-soc) backbone. We target two ASIC tapeouts: Google Efabless SKY130 with open source EDA flow ([Openlane](https://github.com/bol-edu/openlane-lab) & [Efabless Caravel](https://github.com/bol-edu/caravel-lab)) and TSMC 0.18um with commercial EDA flow. 
+
 # Caravel SoC
 Caravel SoC is a platform for developing RISC-V CPU based hardware and software referred from [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc). You can develop and integrate custom design into this platform, then vefify their functionality with open source toolchain.
 
 <img src="https://user-images.githubusercontent.com/11850122/220771595-250f3dfd-8eb9-4216-9a63-91d4c40e28de.png" width=70%>
 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
-
-## 全端IC設計工程師養成計劃 (FullStack IC Designer Development)
-The FullStack IC Designer Development will base on the Caravel SoC backbone. We target two ASIC tapeouts: Google Efabless SKY130 with open source EDA flow ([Openlane](https://github.com/bol-edu/openlane-lab) & [Efabless Caravel](https://github.com/bol-edu/caravel-lab)) and TSMC 0.18um with commercial EDA flow. 
 
 [FullStack IC Designer Development](https://github.com/bol-edu/caravel-soc/files/10835377/accomdemy-fsic-1st-meeting.pdf)
 
