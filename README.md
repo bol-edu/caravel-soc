@@ -5,6 +5,11 @@ Caravel SoC is a platform for developing RISC-V CPU based hardware and software 
 
 More detail can be found in [Caravel's system specification](https://github.com/efabless/caravel/tree/main/docs/pdf).
 
+## 全端IC設計工程師養成計劃 (FullStack IC Designer Development)
+The FullStack IC Designer Development will base on the Caravel SoC backbone. We target two ASIC tapeouts: Google Efabless SKY130 with open source EDA flow and TSMC 0.18um with commercial EDA flow. 
+
+[accomdemy-fsic-1st-meetingFullStack IC Designer Development.pdf](https://github.com/bol-edu/caravel-soc/files/10835377/accomdemy-fsic-1st-meeting.pdf)
+
 ## Toolchain Prerequisites
 * [Ubuntu 20.04.5](https://releases.ubuntu.com/focal/)
 * [RISC-V GCC Toolchains rv32i-4.0.0](https://github.com/stnolting/riscv-gcc-prebuilt)
