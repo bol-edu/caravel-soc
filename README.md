@@ -44,9 +44,9 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/
     ├── cvc-pdk                 # SKY130 OpenRAM SRAM Model
     ├── firmware                # Caravel System Firmware Libraries
     ├── rtl                     # Caravel RTL Designs
-    │   ├── header              # Caravel Headers
-    │   ├── soc                 # Caravel SoC Designs
-    │   ├── user                # Caravel User Project Designs
+    │   ├── header              # Headers
+    │   ├── soc                 # SoC Designs
+    │   ├── user                # User Project Designs
     ├── testbench               # Caravel Testbenches
     │   ├── counter_la          # Counter with Logic Analyzer Interface
     │   ├── counter_wb          # Counter with Wishbone Interface
