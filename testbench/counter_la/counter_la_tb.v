@@ -19,7 +19,7 @@
 
 module counter_la_tb;
 	reg clock;
-    reg RSTB;
+        reg RSTB;
 	reg CSB;
 
 	reg power1, power2;
