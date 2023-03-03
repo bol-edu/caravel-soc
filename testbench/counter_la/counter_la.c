@@ -97,11 +97,11 @@ void main()
 	// reg_uart_clkdiv = 625;
 	reg_uart_enable = 1;
 
-    // Now, apply the configuration
-    reg_mprj_xfer = 1;
-    while (reg_mprj_xfer == 1);
+        // Now, apply the configuration
+        reg_mprj_xfer = 1;
+        while (reg_mprj_xfer == 1);
 
-    // Configure LA probes [31:0], [127:64] as inputs to the cpu 
+        // Configure LA probes [31:0], [127:64] as inputs to the cpu 
 	// Configure LA probes [63:32] as outputs from the cpu
 	reg_la0_oenb = reg_la0_iena = 0x00000000;    // [31:0]
 	reg_la1_oenb = reg_la1_iena = 0xFFFFFFFF;    // [63:32]
