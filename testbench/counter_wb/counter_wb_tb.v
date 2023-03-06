@@ -158,7 +158,7 @@ module counter_wb_tb;
 	end
 
 	initial begin
-	   wait(checkbits == 16'hAB60);
+	        wait(checkbits == 16'hAB60);
 		$display("Monitor: MPRJ-Logic WB Started");
 		wait(checkbits == 16'hAB61);
 		`ifdef GL
