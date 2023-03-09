@@ -46,8 +46,8 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/
     ├── firmware                # Caravel System Firmware Libraries
     ├── rtl                     # Caravel RTL Designs
     │   ├── header              # Headers
-    │   ├── soc                 # Boledu revised SoC Designs
-    │   ├── soc.efabless        # Efabless SoC Designs
+    │   ├── soc                 # Boledu Revised SoC
+    │   ├── soc.orig            # Efabless Origional SoC
     │   ├── user                # User Project Designs
     ├── testbench               # Caravel Testbenches
     │   ├── counter_la          # Counter with Logic Analyzer Interface
