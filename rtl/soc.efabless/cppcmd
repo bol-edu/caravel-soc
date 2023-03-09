@@ -1,0 +1,7 @@
+cpp -C -DFPGA caravel.v  | sed "/^#/d" > ../rtl_new/caravel.v
+cpp -C -DFPGA chip_io.v  | sed "/^#/d" > ../rtl_new/chip_io.v
+cpp -C -DFPGA gpio_control_block.v  | sed "/^#/d" > ../rtl_new/gpio_control_block.v
+cpp -C -DFPGA gpio_defaults_block.v  | sed "/^#/d" > ../rtl_new/gpio_defaults_block.v
+cpp -C -DFPGA mprj_io.v  | sed "/^#/d" > ../rtl_new/mprj_io.v
+cpp -C -DFPGA housekeeping.v  | sed "/^#/d" > ../rtl_new/housekeeping.v
+
