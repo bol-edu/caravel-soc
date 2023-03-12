@@ -227,19 +227,19 @@ ${{\color{white}}}$
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/gcd_la$ ./run_debug
  
- <img src="https://user-images.githubusercontent.com/11850122/224579561-adf3a8a7-bc87-4af8-944f-65d0b2b438dc.png" width=80%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579561-adf3a8a7-bc87-4af8-944f-65d0b2b438dc.png" width=50%>
 
  open another ssh terminal, change to ~/caravel-soc/testbench/gcd_la/gdb.debug direcctory and run make gdb  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
  (13) p i (14) c (15) p i (16) n (17) n (18) n (19) n (20) quit
   
- <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=80%>
- <img src="https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png" width=80%>
- <img src="(https://user-images.githubusercontent.com/11850122/224579839-5563fd54-744a-4982-b360-88bc47e1df43.png" width=100%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=50%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png" width=50%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579839-5563fd54-744a-4982-b360-88bc47e1df43.png" width=100%>
  
  gdbwave disconnection to gdb
    
- <img src="https://user-images.githubusercontent.com/11850122/224579580-30b0c4eb-17b9-483b-bad2-90c0afd77070.png" width=80%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579580-30b0c4eb-17b9-483b-bad2-90c0afd77070.png" width=50%>
 
 ## Trace Verilog Code with Vim + vtags
 We use vim + vtags to find signal trace source/drive target. First case, we demonstrate a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
