@@ -154,7 +154,7 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
 ## GDB + GDBWave Debugging for Custom Designs
-* Limitation: function call not supported in caravel rv32i c code  
+* Limitation: function call not supported in current caravel rv32i c code  
 
 * Counter with (LA) logic analyzer interface
 
