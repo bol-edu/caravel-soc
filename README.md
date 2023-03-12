@@ -235,7 +235,8 @@ ${{\color{white}}}$
   
  ![008-1](https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png)
  ![008-2](https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png)
-
+ ![008-3](https://user-images.githubusercontent.com/11850122/224579839-5563fd54-744a-4982-b360-88bc47e1df43.png)
+ 
  gdbwave disconnection to gdb
   
  ![009](https://user-images.githubusercontent.com/11850122/224579580-30b0c4eb-17b9-483b-bad2-90c0afd77070.png)
