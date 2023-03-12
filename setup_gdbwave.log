@@ -1,0 +1,79 @@
+hls05@HLS05:~$ sudo apt install make g++ zlib1g-dev gdb -y
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+gdb is already the newest version (9.2-0ubuntu1~20.04.1).
+gdb set to manually installed.
+The following additional packages will be installed:
+  g++-9 libstdc++-9-dev zlib1g
+Suggested packages:
+  g++-multilib g++-9-multilib gcc-9-doc libstdc++-9-doc make-doc
+The following NEW packages will be installed:
+  g++ g++-9 libstdc++-9-dev make zlib1g-dev
+The following packages will be upgraded:
+  zlib1g
+1 upgraded, 5 newly installed, 0 to remove and 368 not upgraded.
+Need to get 10.5 MB of archives.
+After this operation, 47.8 MB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g amd64 1:1.2.11.dfsg-2ubuntu1.5 [54.2 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 libstdc++-9-dev amd64 9.4.0-1ubuntu1~20.04.1 [1,722 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 g++-9 amd64 9.4.0-1ubuntu1~20.04.1 [8,420 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu focal/main amd64 g++ amd64 4:9.3.0-1ubuntu2 [1,604 B]
+Get:5 http://us.archive.ubuntu.com/ubuntu focal/main amd64 make amd64 4.2.1-1.2 [162 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu focal-updates/main amd64 zlib1g-dev amd64 1:1.2.11.dfsg-2ubuntu1.5 [155 kB]
+Fetched 10.5 MB in 39s (268 kB/s)
+(Reading database ... 151050 files and directories currently installed.)
+Preparing to unpack .../zlib1g_1%3a1.2.11.dfsg-2ubuntu1.5_amd64.deb ...
+Unpacking zlib1g:amd64 (1:1.2.11.dfsg-2ubuntu1.5) over (1:1.2.11.dfsg-2ubuntu1.2) ...
+Setting up zlib1g:amd64 (1:1.2.11.dfsg-2ubuntu1.5) ...
+Selecting previously unselected package libstdc++-9-dev:amd64.
+(Reading database ... 151050 files and directories currently installed.)
+Preparing to unpack .../libstdc++-9-dev_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++-9.
+Preparing to unpack .../g++-9_9.4.0-1ubuntu1~20.04.1_amd64.deb ...
+Unpacking g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a9.3.0-1ubuntu2_amd64.deb ...
+Unpacking g++ (4:9.3.0-1ubuntu2) ...
+Selecting previously unselected package make.
+Preparing to unpack .../make_4.2.1-1.2_amd64.deb ...
+Unpacking make (4.2.1-1.2) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.11.dfsg-2ubuntu1.5_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.5) ...
+Setting up libstdc++-9-dev:amd64 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up make (4.2.1-1.2) ...
+Setting up g++-9 (9.4.0-1ubuntu1~20.04.1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1.5) ...
+Setting up g++ (4:9.3.0-1ubuntu2) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
+hls05@HLS05:~$ git clone https://github.com/tomverbeure/gdbwave.git
+Cloning into 'gdbwave'...
+remote: Enumerating objects: 429, done.
+remote: Total 429 (delta 0), reused 0 (delta 0), pack-reused 429
+Receiving objects: 100% (429/429), 2.32 MiB | 1.10 MiB/s, done.
+Resolving deltas: 100% (263/263), done.
+hls05@HLS05:~$ pushd ~/gdbwave/src && make && popd
+~/gdbwave/src ~
+cd fst && make
+make[1]: Entering directory '/home/ubuntu/gdbwave/src/fst'
+cc -I. -g   -c -o fastlz.o fastlz.c
+cc -I. -g   -c -o lz4.o lz4.c
+cc -I. -g   -c -o fstapi.o fstapi.c
+ar rcs libfstapi.a fastlz.o lz4.o fstapi.o
+make[1]: Leaving directory '/home/ubuntu/gdbwave/src/fst'
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o main.o main.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o FstProcess.o FstProcess.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o CpuTrace.o CpuTrace.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o RegFileTrace.o RegFileTrace.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o MemTrace.o MemTrace.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o TcpServer.o TcpServer.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o Logger.o Logger.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o gdbstub.o gdbstub.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length   -c -o gdbstub_sys.o gdbstub_sys.cc
+g++ --std=c++14 -I. -Wall -pedantic -g -O0 -Wno-format-zero-length -L./fst -Wall -g   -o gdbwave main.o FstProcess.o CpuTrace.o RegFileTrace.o MemTrace.o TcpServer.o Logger.o gdbstub.o gdbstub_sys.o -lfstapi -lz
+~
+hls05@HLS05:~$
