@@ -33,9 +33,9 @@ More detail can be found in [Caravel's system specification](https://github.com/
     $ cd caravel-soc/
     $ python /opt/vtags-3.11/vtags.py
     $ rm -rf vtags.db/
-    $ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
-    $ chmod +x ./testbench/counter_la/run_debug ./testbench/counter_wb/run_debug ./testbench/gcd_la/run_debug
-    $ chmod +x ./testbench/counter_la/run_clean ./testbench/counter_wb/run_clean ./testbench/gcd_la/run_clean
+    $ chmod +x ~/caravel-soc/testbench/counter_la/run_sim ~/caravel-soc/testbench/counter_wb/run_sim ~/caravel-soc/testbench/gcd_la/run_sim
+    $ chmod +x ~/caravel-soc/testbench/counter_la/run_debug ~/caravel-soc/testbench/counter_wb/run_debug ~/caravel-soc/testbench/gcd_la/run_debug
+    $ chmod +x ~/caravel-soc/testbench/counter_la/run_clean ~/caravel-soc/testbench/counter_wb/run_clean ~/caravel-soc/testbench/gcd_la/run_clean
     $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
     $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
     $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
