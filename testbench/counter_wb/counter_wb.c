@@ -76,11 +76,11 @@ void main()
      /* Apply configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
-
-	reg_la2_oenb = reg_la2_iena = 0x00000000;    // [95:64]
+    
+    reg_la2_oenb = reg_la2_iena = 0x00000000;    // [95:64]
 
     // Flag start of the test
-	reg_mprj_datal = 0xAB600000;
+    reg_mprj_datal = 0xAB600000;
 
     reg_mprj_slave = 0x00002710;
     reg_mprj_datal = 0xAB610000;
