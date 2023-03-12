@@ -235,7 +235,7 @@ ${{\color{white}}}$
   
  <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=48%>
  <img src="https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png" width=48%>
- <img src="https://user-images.githubusercontent.com/11850122/224579839-5563fd54-744a-4982-b360-88bc47e1df43.png" width=60%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579839-5563fd54-744a-4982-b360-88bc47e1df43.png" width=70%>
  
  gdbwave disconnection to gdb
    
