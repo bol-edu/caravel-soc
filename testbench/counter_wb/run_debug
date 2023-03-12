@@ -3,8 +3,9 @@ rm -f *.hex
 riscv32-unknown-elf-gcc -Wl,--no-warn-rwx-segments -g \
 -I../../firmware \
   -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
--Wl,-Bstatic,-T,../../firmware/sections.lds,--strip-discarded \
--ffreestanding -nostdlib -o counter_wb.elf ../../firmware/crt0_vex.S ../../firmware/isr.c counter_wb.c
+-Wl,-Bstatic,-T,../../firmware/sections.lds \
+-ffreestanding -nostdlib -nostartfiles -Wl,--no-relax -Wl,--start-group,--end-group \
+-o counter_wb.elf ../../firmware/crt0_vex.S ../../firmware/isr.c counter_wb.c
 riscv32-unknown-elf-objcopy -O verilog counter_wb.elf counter_wb.hex
 # to fix flash base address
 sed -ie 's/@10/@00/g' counter_wb.hex
