@@ -173,16 +173,20 @@ ${{\color{white}}}$
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/counter_la$ ./run_debug
   
-![001](https://user-images.githubusercontent.com/11850122/224547731-e778debe-ce50-498e-a9bf-67e7cf280dc6.png)
+ <img src="https://user-images.githubusercontent.com/11850122/224581458-7b0aceac-e9eb-4489-8395-8f88171d6fef.png" width=50%>
 
  open another ssh terminal, change to ~/caravel-soc/testbench/counter_la/gdb.debug direcctory and run make gdb  
- executed gdb debug commands: (1) n (2) b main (3) c (4) b 120 (5) c (6) list (7) b 122 (8) c (9) n (10) quit   
+ executed gdb debug commands: (1) n (2) b main (3) c (4) b 122 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
     
-![002](https://user-images.githubusercontent.com/11850122/224547756-53231709-def5-4475-8134-547e9d2c82f9.png)
+ <img src="https://user-images.githubusercontent.com/11850122/224581467-7908c1cd-e6c3-4788-9005-944a8e314969.png" width=50%>
+ 
+ counter_la.c (section)
+  
+ <img src="https://user-images.githubusercontent.com/11850122/224581751-93d5b737-3a96-4e55-ace4-69e0eb45ccf0.png" width=72%>
 
  gdbwave disconnection to gdb
   
-![003](https://user-images.githubusercontent.com/11850122/224547772-45e47239-7c07-4cb1-9176-1b3e3f0cd836.png)
+ <img src="https://user-images.githubusercontent.com/11850122/224581471-a0cb0406-24f3-48a5-928b-290b6b202f9b.png" width=50%>
 
 * Counter with wishbone interface
 
