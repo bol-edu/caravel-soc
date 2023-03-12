@@ -17,6 +17,7 @@ More detail can be found in [Caravel's system specification](https://github.com/
 * [Icarus Verilog v12 + GTKWave Windows](https://bleyer.org/icarus/) (option)
 * [GTKWave v3.3.103](https://gtkwave.sourceforge.net/)
 * [vtags-3.11](https://www.vim.org/scripts/script.php?script_id=5494)
+* [GDBWave](https://tomverbeure.github.io/2022/02/20/GDBWave-Post-Simulation-RISCV-SW-Debugging.html) 
 
 ## Setup and Config
 
@@ -33,12 +34,23 @@ More detail can be found in [Caravel's system specification](https://github.com/
     $ python /opt/vtags-3.11/vtags.py
     $ rm -rf vtags.db/
     $ chmod +x ./testbench/counter_la/run_sim ./testbench/counter_wb/run_sim ./testbench/gcd_la/run_sim
+    $ chmod +x ./testbench/counter_la/run_debug ./testbench/counter_wb/run_debug ./testbench/gcd_la/run_debug
+    $ chmod +x ./testbench/counter_la/run_clean ./testbench/counter_wb/run_clean ./testbench/gcd_la/run_clean
     $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
     $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
     $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
     $ source ~/.bashrc
 
 validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/setup_config.log)
+
+## Setup GDBWave - Post Simulation Debugging
+
+    $ sudo apt install make g++ zlib1g-dev gdb -y
+    $ git clone https://github.com/tomverbeure/gdbwave.git
+    $ pushd ~/gdbwave/src && make && popd
+
+validate your [setup gdbwave - post simulation debugging](https://github.com/bol-edu/caravel-soc/blob/main/setup_gdbwave.log)
+
 
 ## Directory Structure
 
@@ -55,82 +67,177 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/
     └── vip                     # Caravel Verification IP
 
 ## Testbenches for Custom Designs
-In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module.
+In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module, (6) run debugging script produces gdb elf file and starts gdb remote target - gdbwave service, (7) make files and config file for gdb and gdbwave debugging, (8) run clean script removes all simulation and debugging objects. The run debugging script usecases will be demonstrated in next section.
 
 * Counter with (LA) logic analyzer interface 
   * 32-bit LA input  
   * 32-bit LA output
-  * 16-bit mrpj_io as output  
+  * 16-bit mrpj_io as output
+  
+  Files for simulation:  
   ##################################################  
   caravel-soc/testbench/counter_la/counter_la.c  
   caravel-soc/testbench/counter_la/counter_la_tb.v  
   caravel-soc/testbench/counter_la/include.rtl.list  
   caravel-soc/testbench/counter_la/run_sim  
   caravel-soc/testbench/counter_la/waveform.gtkw  
-  ##################################################  
-  /caravel-soc/testbench/counter_la$ ./run_sim  
-  Reading counter_la.hex  
-  counter_la.hex loaded into memory  
-  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
-  VCD info: dumpfile counter_la.vcd opened for output.  
-  LA Test 1 started  
-  output:  
-  LA Test 2 passed  
-  /caravel-soc/testbench/counter_la$ gtkwave waveform.gtkw  
+  ##################################################
+  
+ /caravel-soc/testbench/counter_la$ ./run_sim  
+ Reading counter_la.hex  
+ counter_la.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile counter_la.vcd opened for output.  
+ LA Test 1 started  
+ output:  
+ LA Test 2 passed  
+ /caravel-soc/testbench/counter_la$ gtkwave waveform.gtkw  
 
 ![counter_la_waveform](https://user-images.githubusercontent.com/11850122/220594971-0dc2047d-6883-445e-944e-4cc736c0ab7e.png)
   
 * Counter with wishbone interface
   * 32-bit wishbone input  
   * 32-bit wishbone output
-  * 16-bit mrpj_io as output  
+  * 16-bit mrpj_io as output
+  
+  Files for simulation:  
   ##################################################  
   caravel-soc/testbench/counter_la/counter_wb.c  
   caravel-soc/testbench/counter_la/counter_wb_tb.v  
   caravel-soc/testbench/counter_la/include.rtl.list  
   caravel-soc/testbench/counter_la/run_sim  
   caravel-soc/testbench/counter_la/waveform.gtkw  
-  ##################################################  
-  caravel-soc/testbench/counter_wb$ ./run_sim  
-  Reading counter_wb.hex  
-  counter_wb.hex loaded into memory  
-  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
-  VCD info: dumpfile counter_wb.vcd opened for output.  
-  Monitor: MPRJ-Logic WB Started  
-  Monitor: Mega-Project WB (RTL) Passed  
-  caravel-soc/testbench/counter_wb$ gtkwave waveform.gtkw  
+  ##################################################
+  
+ caravel-soc/testbench/counter_wb$ ./run_sim  
+ Reading counter_wb.hex  
+ counter_wb.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile counter_wb.vcd opened for output.  
+ Monitor: MPRJ-Logic WB Started  
+ Monitor: Mega-Project WB (RTL) Passed  
+ caravel-soc/testbench/counter_wb$ gtkwave waveform.gtkw  
 
 ![counter_wb_waveform](https://user-images.githubusercontent.com/11850122/220597221-3a266f07-1525-4c64-92a8-216b5fe82e25.png)
    
 * GCD with (LA) logic analyzer interface
   * 32-bit x 2 LA input  
   * 32-bit LA output
-  * 16-bit mrpj_io as output  
+  * 16-bit mrpj_io as output
+  
+  Files for simulation:  
   ##################################################  
   caravel-soc/testbench/gcd_la/gcd_la.c  
   caravel-soc/testbench/gcd_la/gcd_la_tb.v  
   caravel-soc/testbench/gcd_la/include.rtl.list  
   caravel-soc/testbench/gcd_la/run_sim  
   caravel-soc/testbench/gcd_la/waveform.gtkw  
-  ##################################################   
-  caravel-soc/testbench/gcd_la$ ./run_sim  
-  Reading gcd_la.hex  
-  gcd_la.hex loaded into memory  
-  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
-  VCD info: dumpfile gcd_la.vcd opened for output.  
-  LA Test seq_gcd(10312050, 29460792)=138 started  
-  LA Test seq_gcd(10312050, 29460792)=138 passed  
-  LA Test seq_gcd(1993627629, 1177417612)=7 started  
-  LA Test seq_gcd(1993627629, 1177417612)=7 passed  
-  LA Test seq_gcd(2097015289, 3812041926)=1 started  
-  LA Test seq_gcd(2097015289, 3812041926)=1 passed  
-  LA Test seq_gcd(1924134885, 3151131255)=135 started  
-  LA Test seq_gcd(1924134885, 3151131255)=135 passed  
-  LA Test seq_gcd(992211318, 512609597)=1 started  
-  LA Test seq_gcd(992211318, 512609597)=1 passed  
-  caravel-soc/testbench/gcd_la$ gtkwave waveform.gtkw  
+  ##################################################
+  
+ caravel-soc/testbench/gcd_la$ ./run_sim  
+ Reading gcd_la.hex  
+ gcd_la.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile gcd_la.vcd opened for output.  
+ LA Test seq_gcd(10312050, 29460792)=138 started  
+ LA Test seq_gcd(10312050, 29460792)=138 passed  
+ LA Test seq_gcd(1993627629, 1177417612)=7 started  
+ LA Test seq_gcd(1993627629, 1177417612)=7 passed  
+ LA Test seq_gcd(2097015289, 3812041926)=1 started  
+ LA Test seq_gcd(2097015289, 3812041926)=1 passed  
+ LA Test seq_gcd(1924134885, 3151131255)=135 started  
+ LA Test seq_gcd(1924134885, 3151131255)=135 passed  
+ LA Test seq_gcd(992211318, 512609597)=1 started  
+ LA Test seq_gcd(992211318, 512609597)=1 passed  
+ caravel-soc/testbench/gcd_la$ gtkwave waveform.gtkw  
  
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
+
+## GDB + GDBWave Debugging for Custom Designs
+* Limitation: function call not supported in caravel rv32i c code  
+
+* Counter with (LA) logic analyzer interface
+
+  Files for debugging:  
+  ##################################################  
+  caravel-soc/testbench/counter_la/counter_la.c  
+  caravel-soc/testbench/counter_la/counter_la_tb.v  
+  caravel-soc/testbench/counter_la/gdb.make  
+  caravel-soc/testbench/counter_la/gdbwave.config  
+  caravel-soc/testbench/counter_la/gdbwave.make  
+  caravel-soc/testbench/counter_la/include.rtl.list  
+  caravel-soc/testbench/counter_la/run_debug  
+  ##################################################
+  
+ #execute run_debug to start gdbwave service and wait gdb connection  
+ /caravel-soc/testbench/counter_la$ ./run_debug
+  
+![001](https://user-images.githubusercontent.com/11850122/224537415-c7cec6ba-bffc-4f16-b687-9faa5f48dbb5.png)
+
+ open another ssh terminal, change to ~/caravel-soc/testbench/counter_la/gdb.debug direcctory and run make gdb  
+ executed gdb debug commands: (1) n (2) b main (3) c (4) b 120 (5) c (6) list (7) b 122 (8) c (9) n (10) quit   
+    
+![002](https://user-images.githubusercontent.com/11850122/224542804-45c0c0de-7a46-47cb-809c-6fd6484eb33b.png)
+
+ gdbwave disconnection to gdb
+  
+![003](https://user-images.githubusercontent.com/11850122/224537064-ea8483cc-d123-4b44-ae6e-5d1b5fb9b403.png)
+
+* Counter with wishbone interface
+
+  Files for debugging:  
+  ##################################################  
+  caravel-soc/testbench/counter_wb/counter_wb.c  
+  caravel-soc/testbench/counter_wb/counter_wb_tb.v  
+  caravel-soc/testbench/counter_wb/gdb.make  
+  caravel-soc/testbench/counter_wb/gdbwave.config  
+  caravel-soc/testbench/counter_wb/gdbwave.make  
+  caravel-soc/testbench/counter_wb/include.rtl.list  
+  caravel-soc/testbench/counter_wb/run_debug  
+  ##################################################
+  
+ #execute run_debug to start gdbwave service and wait gdb connection  
+ /caravel-soc/testbench/counter_wb$ ./run_debug
+ 
+ ![004](https://user-images.githubusercontent.com/11850122/224539605-52ac66c2-3f2a-42b4-a4c0-4763d5acb7a2.png)
+ 
+ open another ssh terminal, change to ~/caravel-soc/testbench/counter_wb/gdb.debug direcctory and run make gdb  
+ executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (unexpected prog exit at line:85) (8) quit   
+ 
+ ![005](https://user-images.githubusercontent.com/11850122/224542501-4eb63d82-d855-499a-ae9b-475478e7c333.png)
+ 
+ gdbwave disconnection to gdb
+ 
+ ![006](https://user-images.githubusercontent.com/11850122/224542141-5da660d2-736b-4a38-bb44-1802f0947283.png)
+ 
+ * GCD with (LA) logic analyzer interface
+
+  Files for debugging:  
+  ##################################################  
+  caravel-soc/testbench/gcd_la/gcd_la.c  
+  caravel-soc/testbench/gcd_la/gcd_la_tb.v  
+  caravel-soc/testbench/gcd_la/gdb.make  
+  caravel-soc/testbench/gcd_la/gdbwave.config  
+  caravel-soc/testbench/gcd_la/gdbwave.make  
+  caravel-soc/testbench/gcd_la/include.rtl.list  
+  caravel-soc/testbench/gcd_la/run_debug  
+  ##################################################
+  
+ #execute run_debug to start gdbwave service and wait gdb connection  
+ /caravel-soc/testbench/gcd_la$ ./run_debug
+ 
+ ![007](https://user-images.githubusercontent.com/11850122/224543727-f7ec1241-b85a-4ec6-b8d2-e356b78f1093.png)
+ 
+ open another ssh terminal, change to ~/caravel-soc/testbench/gcd_la/gdb.debug direcctory and run make gdb  
+ executed gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
+ (13) p i (14) c (15) p i (16) n (17) quit
+ 
+ ![008-1](https://user-images.githubusercontent.com/11850122/224545138-6d6bcab5-9acf-4856-8da1-ed8c7251d782.png)
+ ![008-2](https://user-images.githubusercontent.com/11850122/224545141-0ccbab26-1276-48bd-9520-8a94bfefffbc.png)
+ 
+ gdbwave disconnection to gdb
+  
+ ![009](https://user-images.githubusercontent.com/11850122/224545233-44a44d1f-2d3c-428e-af4a-70a80ae33137.png)
 
 ## Trace Verilog Code with Vim + vtags
 We use vim + vtags to find signal trace source/drive target. First case, we demonstrate a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
@@ -198,6 +305,8 @@ found *clock_core* declaration at chip_io.v:72
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
 * [GTKWave 3.3 Wave Analyzer User's Guide](https://gtkwave.sourceforge.net/gtkwave.pdf)
 * [vtags : verdi like, verilog code signal trace and show topo script](https://www.vim.org/scripts/script.php?script_id=5494)
+* [Common GDB Commands](https://people.computing.clemson.edu/~chochri/gdb-basics.pdf)
+* [GDBWave - A Post-Simulation Waveform-Based RISC-V GDB Debugging Server](https://tomverbeure.github.io/2022/02/20/GDBWave-Post-Simulation-RISCV-SW-Debugging.html) 
 
 ## Research Papers
 * [GHAZI: An Open-Source ASIC Implementation of RISC-V based SoC based SoC, 2022](https://www.techrxiv.org/articles/preprint/GHAZI_An_Open-Source_ASIC_Implementation_of_RISC-V_based_SoC/21770456)
