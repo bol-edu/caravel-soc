@@ -155,7 +155,7 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
 
 ## GDB + GDBWave Debugging for Custom Designs
 * Limitation: function call not supported in current caravel rv32i c code  
-* Debugging test of Custom Designs: counter_la (passed), counter_wb (failed at wb register access), gcd_la (passed)  
+* Debugging test of Custom Designs: (1) counter_la.c (passed), (2) counter_wb.c (failed at wb register access), (3) gcd_la.c (passed)  
 ${{\color{white}}}$
 * Counter with (LA) logic analyzer interface
 
