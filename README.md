@@ -172,16 +172,16 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/counter_la$ ./run_debug
   
-![001](https://user-images.githubusercontent.com/11850122/224537415-c7cec6ba-bffc-4f16-b687-9faa5f48dbb5.png)
+![001](https://user-images.githubusercontent.com/11850122/224547731-e778debe-ce50-498e-a9bf-67e7cf280dc6.png)
 
  open another ssh terminal, change to ~/caravel-soc/testbench/counter_la/gdb.debug direcctory and run make gdb  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 120 (5) c (6) list (7) b 122 (8) c (9) n (10) quit   
     
-![002](https://user-images.githubusercontent.com/11850122/224542804-45c0c0de-7a46-47cb-809c-6fd6484eb33b.png)
+![002](https://user-images.githubusercontent.com/11850122/224547756-53231709-def5-4475-8134-547e9d2c82f9.png)
 
  gdbwave disconnection to gdb
   
-![003](https://user-images.githubusercontent.com/11850122/224537064-ea8483cc-d123-4b44-ae6e-5d1b5fb9b403.png)
+![003](https://user-images.githubusercontent.com/11850122/224547772-45e47239-7c07-4cb1-9176-1b3e3f0cd836.png)
 
 * Counter with wishbone interface
 
@@ -199,17 +199,17 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/counter_wb$ ./run_debug
  
- ![004](https://user-images.githubusercontent.com/11850122/224539605-52ac66c2-3f2a-42b4-a4c0-4763d5acb7a2.png)
- 
+ ![004](https://user-images.githubusercontent.com/11850122/224547783-c7515996-1b6d-4cb2-bddb-5769027e116a.png)
+
  open another ssh terminal, change to ~/caravel-soc/testbench/counter_wb/gdb.debug direcctory and run make gdb  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (unexpected prog exit at line:85) (8) quit   
  
- ![005](https://user-images.githubusercontent.com/11850122/224542501-4eb63d82-d855-499a-ae9b-475478e7c333.png)
- 
+ ![005](https://user-images.githubusercontent.com/11850122/224547798-9a92b412-643e-4c59-a9f5-eb835e105240.png)
+
  gdbwave disconnection to gdb
  
- ![006](https://user-images.githubusercontent.com/11850122/224542141-5da660d2-736b-4a38-bb44-1802f0947283.png)
- 
+ ![006](https://user-images.githubusercontent.com/11850122/224547801-4f8acf88-1b51-49ce-bb43-7e67d3fe32f8.png)
+
  * GCD with (LA) logic analyzer interface
 
   Files for debugging:  
@@ -226,18 +226,18 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/gcd_la$ ./run_debug
  
- ![007](https://user-images.githubusercontent.com/11850122/224543727-f7ec1241-b85a-4ec6-b8d2-e356b78f1093.png)
- 
+ ![007](https://user-images.githubusercontent.com/11850122/224547808-e1098b94-0026-4aea-b6c6-67f5f89ca460.png)
+
  open another ssh terminal, change to ~/caravel-soc/testbench/gcd_la/gdb.debug direcctory and run make gdb  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
  (13) p i (14) c (15) p i (16) n (17) quit
  
- ![008-1](https://user-images.githubusercontent.com/11850122/224545138-6d6bcab5-9acf-4856-8da1-ed8c7251d782.png)
- ![008-2](https://user-images.githubusercontent.com/11850122/224545141-0ccbab26-1276-48bd-9520-8a94bfefffbc.png)
- 
+ ![008-1](https://user-images.githubusercontent.com/11850122/224547814-8462c899-9dca-482f-8355-e7868d391363.png)
+ ![008-2](https://user-images.githubusercontent.com/11850122/224547818-32f22689-7a68-4cbe-abc4-e0f279775887.png)
+
  gdbwave disconnection to gdb
   
- ![009](https://user-images.githubusercontent.com/11850122/224545233-44a44d1f-2d3c-428e-af4a-70a80ae33137.png)
+ ![009](https://user-images.githubusercontent.com/11850122/224547830-3a6a02c5-bc6d-4ee3-8e09-7affa41cc2ed.png)
 
 ## Trace Verilog Code with Vim + vtags
 We use vim + vtags to find signal trace source/drive target. First case, we demonstrate a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
