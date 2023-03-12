@@ -144,8 +144,8 @@ void main()
 	      reg_la1_oenb = reg_la1_iena = 0x00000000;    
 
 	      while (1) {
-		      if (reg_la0_data_in == expect[i]) {		
-		     	  reg_mprj_datal = 0xAB410000;
+		      if (reg_la0_data_in == expect[i]) {
+			  reg_mprj_datal = 0xAB410000;
 			  break;
 		      }		
 	      }	
