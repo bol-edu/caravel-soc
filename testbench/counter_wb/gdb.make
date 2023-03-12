@@ -1,21 +1,14 @@
 MARCH           = rv32i
-
 TOOLS_PREFIX    = /opt/riscv/bin
-
 TARGET          = $(TOOLS_PREFIX)/riscv32-unknown-elf
-
 AS              = $(TARGET)-as
 ASFLAGS         = -march=$(MARCH) -mabi=ilp32
 LD              = $(TARGET)-gcc
 LDFLAGS         = -march=$(MARCH) -g -ggdb -I../../../firmware -mabi=ilp32 -Wl,-T,../../../firmware/sections.lds,-Map,progmem.map -ffreestanding -nostdlib -nostartfiles -Wl,--no-relax -Wl,--start-group,--end-group
-
 OBJCOPY         = $(TARGET)-objcopy
 OBJDUMP         = $(TARGET)-objdump
 READELF         = $(TARGET)-readelf
-
 GDBGUI          = gdbgui
-
-CREATE_MIF      = ../gdb.util/create_mif.rb
 
 .PHONY: all clean 
 
