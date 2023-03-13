@@ -209,11 +209,11 @@ ${{\color{white}}}$
  open another ssh terminal, change to ~/caravel-soc/testbench/counter_wb/gdb.debug direcctory and run make gdb  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
    
- <img src="https://user-images.githubusercontent.com/11850122/224583295-f2485848-9581-484e-82c5-e54b0e5c0af7.png" width=50%>
+ <img src="https://user-images.githubusercontent.com/11850122/224583295-f2485848-9581-484e-82c5-e54b0e5c0af7.png" width=52%>
  
  counter_wb.c (section)
  
- <img src="https://user-images.githubusercontent.com/11850122/224583669-46c423e5-c55c-4be9-b692-4ab6e8315d63.png" width=65%>
+ <img src="https://user-images.githubusercontent.com/11850122/224583669-46c423e5-c55c-4be9-b692-4ab6e8315d63.png" width=50%>
 
  gdbwave disconnection to gdb
    
