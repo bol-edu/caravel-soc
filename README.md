@@ -203,17 +203,17 @@ ${{\color{white}}}$
   
  #execute run_debug to start gdbwave service and wait gdb connection  
  /caravel-soc/testbench/counter_wb$ ./run_debug
- 
- ![004](https://user-images.githubusercontent.com/11850122/224547783-c7515996-1b6d-4cb2-bddb-5769027e116a.png)
+   
+ <img src="https://user-images.githubusercontent.com/11850122/224583251-8e50e08f-e6c0-44bf-9b02-6f2ef353e0bd.png" width=40%>
 
  open another ssh terminal, change to ~/caravel-soc/testbench/counter_wb/gdb.debug direcctory and run make gdb  
- executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (unexpected prog exit at line:85) (8) quit   
+ executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
+   
+ <img src="https://user-images.githubusercontent.com/11850122/224583295-f2485848-9581-484e-82c5-e54b0e5c0af7.png" width=50%>
  
- ![005](https://user-images.githubusercontent.com/11850122/224547798-9a92b412-643e-4c59-a9f5-eb835e105240.png)
-
  gdbwave disconnection to gdb
- 
- ![006](https://user-images.githubusercontent.com/11850122/224547801-4f8acf88-1b51-49ce-bb43-7e67d3fe32f8.png)
+   
+ <img src="https://user-images.githubusercontent.com/11850122/224583367-87d351e3-ff7c-4cdf-802c-2ff34517c74a.png" width=50%>
 
  * GCD with (LA) logic analyzer interface
 
