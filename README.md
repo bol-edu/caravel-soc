@@ -67,7 +67,7 @@ validate your [setup gdbwave - post simulation debugging](https://github.com/bol
     └── vip                     # Caravel Verification IP
 
 ## Testbenches for Custom Designs
-In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module, (6) run debugging script produces gdb elf file and starts gdb remote target - gdbwave service, (7) make files and config file for gdb and gdbwave debugging, (8) run clean script removes all simulation and debugging objects. The run debugging script usecases will be demonstrated in next section.
+In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbench (.v), (3) included RTL files (.list), (4) run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, (5) GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module, (6) run debugging script produces gdb elf file, fst waveform file and starts gdbwave service (gdb remote target), (7) make files and config file for gdb and gdbwave debugging, (8) run clean script removes all simulation and debugging objects. The run debugging script usecases will be demonstrated in next section.
 
 * Counter with (LA) logic analyzer interface 
   * 32-bit LA input  
