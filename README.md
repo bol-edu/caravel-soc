@@ -211,6 +211,10 @@ ${{\color{white}}}$
    
  <img src="https://user-images.githubusercontent.com/11850122/224583295-f2485848-9581-484e-82c5-e54b0e5c0af7.png" width=50%>
  
+ counter_wb.c (section)
+ 
+ <img src="https://user-images.githubusercontent.com/11850122/224583669-46c423e5-c55c-4be9-b692-4ab6e8315d63.png" width=65%>
+
  gdbwave disconnection to gdb
    
  <img src="https://user-images.githubusercontent.com/11850122/224583367-87d351e3-ff7c-4cdf-802c-2ff34517c74a.png" width=50%>
