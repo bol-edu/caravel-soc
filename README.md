@@ -154,8 +154,6 @@ In each testbench subdirectory contains (1) firmware driver (.c), (2) RTL testbe
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
 ## GDB + GDBWave Debugging for Custom Designs
-* Debugging test of Custom Designs: (1) counter_la.c (passed), (2) counter_wb.c (passed), (3) gcd_la.c (passed)  
-${{\color{white}}}$
 * Counter with (LA) logic analyzer interface
 
   Files for debugging:  
