@@ -241,8 +241,8 @@ ${{\color{white}}}$
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
  (13) p i (14) c (15) p i (16) n (17) n (18) n (19) n (20) quit
   
- <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=50%>
- <img src="https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png" width=50%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=48%>
+ <img src="https://user-images.githubusercontent.com/11850122/224579572-a17ca83c-2df9-4972-b90a-ece4f6ae6401.png" width=48%>
  
  gcd_la.c (section)
  
