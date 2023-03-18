@@ -13,4 +13,4 @@ iverilog -Ttyp -DFUNCTIONAL -DSIM -DUNIT_DELAY=#1 \
 	-f./include.rtl.list -o gcd_la.vvp gcd_la_tb.v
 
 vvp gcd_la.vvp
-rm -f gcd_la.vvp gcd_la.elf gcd_la.hexe
+rm -f gcd_la.vvp gcd_la.elf gcd_la.hex
