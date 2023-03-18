@@ -13,4 +13,4 @@ iverilog -Ttyp -DFUNCTIONAL -DSIM -DUNIT_DELAY=#1 \
 	-f./include.rtl.list -o counter_wb.vvp counter_wb_tb.v
 
 vvp counter_wb.vvp
-rm -f counter_wb.vvp counter_wb.elf counter_wb.hex
+rm -f counter_wb.vvp counter_wb.elf counter_wb.hexe
