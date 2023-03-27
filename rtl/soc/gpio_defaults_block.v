@@ -71,17 +71,16 @@ module gpio_defaults_block #(
     parameter GPIO_CONFIG_INIT = 13'h0402
 ) (
 `ifdef USE_POWER_PINS
-    inout VPWR,
-    inout VGND,
+    inout wire VPWR,
+    inout wire VGND,
 `endif
-    output [12:0] gpio_defaults
+    output wire [12:0] gpio_defaults
 );
 
-    wire [12:0] gpio_defaults;
-    wire [12:0] gpio_defaults_high;
-    wire [12:0] gpio_defaults_low;
-assign gpio_defaults = GPIO_CONFIG_INIT;
+wire [12:0] gpio_defaults_high;
+wire [12:0] gpio_defaults_low;
 
+assign gpio_defaults = GPIO_CONFIG_INIT;
 
 
 endmodule

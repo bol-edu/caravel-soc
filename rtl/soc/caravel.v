@@ -42,7 +42,8 @@
  
 `ifdef SIM
  `default_nettype wire
- `endif
+`endif
+
 // SPDX-FileCopyrightText: 2020 Efabless Corporation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -80,20 +81,20 @@ module caravel (
 // FPGA:  remove vdd,vss,vcc
 
 
-    inout gpio, // Used for external LDO control
+    inout                     gpio, // Used for external LDO control
     inout [`MPRJ_IO_PADS-1:0] mprj_io,
-    input clock, // CMOS core clock input, not a crystal
-    input resetb, // Reset input (sense inverted)
+    input                     clock, // CMOS core clock input, not a crystal
+    input                     resetb, // Reset input (sense inverted)
 
     // Note that only two flash data pins are dedicated to the
     // management SoC wrapper.  The management SoC exports the
     // quad SPI mode status to make use of the top two mprj_io
     // pins for io2 and io3.
 
-    output flash_csb,
-    output flash_clk,
-    output flash_io0,
-    output flash_io1
+    output                    flash_csb,
+    output                    flash_clk,
+    output                    flash_io0,
+    output                    flash_io1
 );
 
     //------------------------------------------------------------
@@ -288,29 +289,31 @@ module caravel (
   flash_io0_ieb_buf,
   flash_io1_ieb_buf,
   flash_io0_do_buf,
-  flash_io1_do_buf } =
-  {
-  caravel_clk,
-  caravel_rstn,
-  flash_clk_frame,
-  flash_csb_frame,
-  flash_clk_oeb,
-  flash_csb_oeb,
-  flash_io0_oeb,
-  flash_io1_oeb,
-  flash_io0_ieb,
-  flash_io1_ieb,
-  flash_io0_do,
-  flash_io1_do };
+  flash_io1_do_buf } = { caravel_clk,
+                         caravel_rstn,
+                         flash_clk_frame,
+                         flash_csb_frame,
+                         flash_clk_oeb,
+                         flash_csb_oeb,
+                         flash_io0_oeb,
+                         flash_io1_oeb,
+                         flash_io0_ieb,
+                         flash_io1_ieb,
+                         flash_io0_do,
+                         flash_io1_do };
+
+
+
+
  assign
  {
   clock_core_buf,
   flash_io1_di_buf,
-  flash_io0_di_buf } =
- {
-  clock_core,
-  flash_io1_di,
-  flash_io0_di };
+  flash_io0_di_buf } = {
+                        clock_core,
+                        flash_io1_di,
+                        flash_io0_di };
+
 // end of module buff_flash_clkrst 
 
 
@@ -571,9 +574,15 @@ module caravel (
  .sram_ro_data(hkspi_sram_data),
 `endif
 
- // Trap status
- .trap(trap)
+     // Trap status
+     .trap(trap)
     );
+
+
+
+
+
+
 
     /* Clock and reset to user space are passed through a tristate	*/
     /* buffer like the above, but since they are intended to be		*/
@@ -609,7 +618,7 @@ module caravel (
     /*--------------------------------------------------*/
 
     user_project_wrapper mprj (
-        `ifdef USE_POWER_PINS
+     `ifdef USE_POWER_PINS
      .vdda1(vdda1_core), // User area 1 3.3V power
      .vdda2(vdda2_core), // User area 2 3.3V power
      .vssa1(vssa1_core), // User area 1 analog ground
@@ -623,33 +632,36 @@ module caravel (
      .wb_clk_i(mprj_clock),
      .wb_rst_i(mprj_reset),
 
- // Management SoC Wishbone bus (exported)
- .wbs_cyc_i(mprj_cyc_o_user),
- .wbs_stb_i(mprj_stb_o_user),
- .wbs_we_i(mprj_we_o_user),
- .wbs_sel_i(mprj_sel_o_user),
- .wbs_adr_i(mprj_adr_o_user),
- .wbs_dat_i(mprj_dat_o_user),
- .wbs_ack_o(mprj_ack_i_user),
- .wbs_dat_o(mprj_dat_i_user),
+     // Management SoC Wishbone bus (exported)
+     .wbs_cyc_i(mprj_cyc_o_user),
+     .wbs_stb_i(mprj_stb_o_user),
+     .wbs_we_i(mprj_we_o_user),
+     .wbs_sel_i(mprj_sel_o_user),
+     .wbs_adr_i(mprj_adr_o_user),
+     .wbs_dat_i(mprj_dat_o_user),
+     .wbs_ack_o(mprj_ack_i_user),
+     .wbs_dat_o(mprj_dat_i_user),
 
- // GPIO pad 3-pin interface (plus analog)
- .io_in (user_io_in),
+     // GPIO pad 3-pin interface (plus analog)
+     .io_in (user_io_in),
      .io_out(user_io_out),
      .io_oeb(user_io_oeb),
- .analog_io(user_analog_io),
+     .analog_io(user_analog_io),
 
- // Logic analyzer
- .la_data_in(la_data_in_user),
- .la_data_out(la_data_out_user),
- .la_oenb(la_oenb_user),
+     // Logic analyzer
+     .la_data_in(la_data_in_user),
+     .la_data_out(la_data_out_user),
+     .la_oenb(la_oenb_user),
 
- // Independent clock
- .user_clock2(mprj_clock2),
+     // Independent clock
+     .user_clock2(mprj_clock2),
 
- // IRQ
- .user_irq(user_irq_core)
+     // IRQ
+     .user_irq(user_irq_core)
     );
+
+
+
 
     /*------------------------------------------*/
     /* End user project instantiation		*/
@@ -710,10 +722,10 @@ module caravel (
     // Housekeeping interface
 
     housekeeping housekeeping (
-    `ifdef USE_POWER_PINS
-  .VPWR(vccd_core),
-  .VGND(vssd_core),
-    `endif
+        `ifdef USE_POWER_PINS
+        .VPWR(vccd_core),
+        .VGND(vssd_core),
+        `endif
 
         .wb_clk_i(caravel_clk),
         .wb_rstn_i(caravel_rstn),
@@ -737,23 +749,23 @@ module caravel (
         .pll_trim(spi_pll_trim),
         .pll_bypass(ext_clk_sel),
 
- .qspi_enabled(qspi_enabled),
- .uart_enabled(uart_enabled),
- .spi_enabled(spi_enabled),
- .debug_mode(debug_mode),
-
- .ser_tx(ser_tx),
- .ser_rx(ser_rx),
-
- .spi_sdi(spi_sdi),
- .spi_csb(spi_csb),
- .spi_sck(spi_sck),
- .spi_sdo(spi_sdo),
- .spi_sdoenb(spi_sdoenb),
-
- .debug_in(debug_in),
- .debug_out(debug_out),
- .debug_oeb(debug_oeb),
+        .qspi_enabled(qspi_enabled),
+        .uart_enabled(uart_enabled),
+        .spi_enabled(spi_enabled),
+        .debug_mode(debug_mode),
+       
+        .ser_tx(ser_tx),
+        .ser_rx(ser_rx),
+       
+        .spi_sdi(spi_sdi),
+        .spi_csb(spi_csb),
+        .spi_sck(spi_sck),
+        .spi_sdo(spi_sdo),
+        .spi_sdoenb(spi_sdoenb),
+       
+        .debug_in(debug_in),
+        .debug_out(debug_out),
+        .debug_oeb(debug_oeb),
 
         .irq(irq_spi),
         .reset(ext_reset),
@@ -764,58 +776,61 @@ module caravel (
         .serial_data_1(mprj_io_loader_data_1),
         .serial_data_2(mprj_io_loader_data_2),
 
- .mgmt_gpio_in(mgmt_io_in_hk),
- .mgmt_gpio_out(mgmt_io_out_hk),
- .mgmt_gpio_oeb(mgmt_io_oeb_hk),
-
- .pwr_ctrl_out(pwr_ctrl_nc), /* Not used in this version */
+        .mgmt_gpio_in(mgmt_io_in_hk),
+        .mgmt_gpio_out(mgmt_io_out_hk),
+        .mgmt_gpio_oeb(mgmt_io_oeb_hk),
+        
+        .pwr_ctrl_out(pwr_ctrl_nc), /* Not used in this version */
 
         .trap(trap),
 
- .user_clock(caravel_clk2),
+        .user_clock(caravel_clk2),
 
         .mask_rev_in(mask_rev),
 
- .spimemio_flash_csb(flash_csb_core),
- .spimemio_flash_clk(flash_clk_core),
- .spimemio_flash_io0_oeb(flash_io0_oeb_core),
- .spimemio_flash_io1_oeb(flash_io1_oeb_core),
- .spimemio_flash_io2_oeb(flash_io2_oeb_core),
- .spimemio_flash_io3_oeb(flash_io3_oeb_core),
- .spimemio_flash_io0_do(flash_io0_do_core),
- .spimemio_flash_io1_do(flash_io1_do_core),
- .spimemio_flash_io2_do(flash_io2_do_core),
- .spimemio_flash_io3_do(flash_io3_do_core),
- .spimemio_flash_io0_di(flash_io0_di_core),
- .spimemio_flash_io1_di(flash_io1_di_core),
- .spimemio_flash_io2_di(flash_io2_di_core),
- .spimemio_flash_io3_di(flash_io3_di_core),
+        .spimemio_flash_csb(flash_csb_core),
+        .spimemio_flash_clk(flash_clk_core),
+        .spimemio_flash_io0_oeb(flash_io0_oeb_core),
+        .spimemio_flash_io1_oeb(flash_io1_oeb_core),
+        .spimemio_flash_io2_oeb(flash_io2_oeb_core),
+        .spimemio_flash_io3_oeb(flash_io3_oeb_core),
+        .spimemio_flash_io0_do(flash_io0_do_core),
+        .spimemio_flash_io1_do(flash_io1_do_core),
+        .spimemio_flash_io2_do(flash_io2_do_core),
+        .spimemio_flash_io3_do(flash_io3_do_core),
+        .spimemio_flash_io0_di(flash_io0_di_core),
+        .spimemio_flash_io1_di(flash_io1_di_core),
+        .spimemio_flash_io2_di(flash_io2_di_core),
+        .spimemio_flash_io3_di(flash_io3_di_core),
+       
+        .pad_flash_csb(flash_csb_frame),
+        .pad_flash_csb_oeb(flash_csb_oeb),
+        .pad_flash_clk(flash_clk_frame),
+        .pad_flash_clk_oeb(flash_clk_oeb),
+        .pad_flash_io0_oeb(flash_io0_oeb),
+        .pad_flash_io1_oeb(flash_io1_oeb),
+        .pad_flash_io0_ieb(flash_io0_ieb),
+        .pad_flash_io1_ieb(flash_io1_ieb),
+        .pad_flash_io0_do(flash_io0_do),
+        .pad_flash_io1_do(flash_io1_do),
+        .pad_flash_io0_di(flash_io0_di_buf),
+        .pad_flash_io1_di(flash_io1_di_buf),
+       
+        `ifdef USE_SRAM_RO_INTERFACE
+        .sram_ro_clk(hkspi_sram_clk),
+        .sram_ro_csb(hkspi_sram_csb),
+        .sram_ro_addr(hkspi_sram_addr),
+        .sram_ro_data(hkspi_sram_data),
+        `endif
+       
+        .usr1_vcc_pwrgood(mprj_vcc_pwrgood),
+        .usr2_vcc_pwrgood(mprj2_vcc_pwrgood),
+        .usr1_vdd_pwrgood(mprj_vdd_pwrgood),
+        .usr2_vdd_pwrgood(mprj2_vdd_pwrgood)
+       );
 
- .pad_flash_csb(flash_csb_frame),
- .pad_flash_csb_oeb(flash_csb_oeb),
- .pad_flash_clk(flash_clk_frame),
- .pad_flash_clk_oeb(flash_clk_oeb),
- .pad_flash_io0_oeb(flash_io0_oeb),
- .pad_flash_io1_oeb(flash_io1_oeb),
- .pad_flash_io0_ieb(flash_io0_ieb),
- .pad_flash_io1_ieb(flash_io1_ieb),
- .pad_flash_io0_do(flash_io0_do),
- .pad_flash_io1_do(flash_io1_do),
- .pad_flash_io0_di(flash_io0_di_buf),
- .pad_flash_io1_di(flash_io1_di_buf),
 
-`ifdef USE_SRAM_RO_INTERFACE
- .sram_ro_clk(hkspi_sram_clk),
- .sram_ro_csb(hkspi_sram_csb),
- .sram_ro_addr(hkspi_sram_addr),
- .sram_ro_data(hkspi_sram_data),
-`endif
 
- .usr1_vcc_pwrgood(mprj_vcc_pwrgood),
- .usr2_vcc_pwrgood(mprj2_vcc_pwrgood),
- .usr1_vdd_pwrgood(mprj_vdd_pwrgood),
- .usr2_vdd_pwrgood(mprj2_vdd_pwrgood)
-    );
 
     /* GPIO defaults (via programmed) */
     wire [`MPRJ_IO_PADS*13-1:0] gpio_defaults;
@@ -1388,7 +1403,7 @@ module caravel (
      .vssd1(vssd1_core),
         `endif
 
- .gpio_defaults(gpio_defaults[(`MPRJ_IO_PADS*13-1):(`MPRJ_IO_PADS*13-39)]),
+     .gpio_defaults(gpio_defaults[(`MPRJ_IO_PADS*13-1):(`MPRJ_IO_PADS*13-39)]),
 
      // Management Soc-facing signals
 
@@ -1401,11 +1416,11 @@ module caravel (
      .serial_load_out(gpio_load_2[(`MPRJ_IO_PADS_2-1):(`MPRJ_IO_PADS_2-3)]),
 
      .mgmt_gpio_in(mgmt_io_in[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
- .mgmt_gpio_out(mgmt_io_out[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
- .mgmt_gpio_oeb(mgmt_io_oeb[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
+     .mgmt_gpio_out(mgmt_io_out[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
+     .mgmt_gpio_oeb(mgmt_io_oeb[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
 
-        .one(mprj_io_one[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
-        .zero(),
+     .one(mprj_io_one[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)]),
+     .zero(),
 
      // Serial data chain for pad configuration
      .serial_data_in(gpio_serial_link_2_shifted[(`MPRJ_IO_PADS_2-1):(`MPRJ_IO_PADS_2-3)]),
@@ -1431,6 +1446,8 @@ module caravel (
      .pad_gpio_in(mprj_io_in[(`MPRJ_IO_PADS-1):(`MPRJ_IO_PADS-3)])
     );
 
+
+
     /* Section 2 GPIOs (GPIO 19 to 34) */
 
     gpio_control_block gpio_control_in_2 [`MPRJ_IO_PADS_2-4:0] (
@@ -1441,7 +1458,7 @@ module caravel (
      .vssd1(vssd1_core),
         `endif
 
- .gpio_defaults(gpio_defaults[(`MPRJ_IO_PADS*13-40):(`MPRJ_IO_PADS_1*13)]),
+     .gpio_defaults(gpio_defaults[(`MPRJ_IO_PADS*13-40):(`MPRJ_IO_PADS_1*13)]),
 
      // Management Soc-facing signals
 

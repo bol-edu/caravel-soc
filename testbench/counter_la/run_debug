@@ -6,7 +6,9 @@ riscv32-unknown-elf-gcc -Wl,--no-warn-rwx-segments -g \
 -Wl,-Bstatic,-T,../../firmware/sections.lds \
 -ffreestanding -nostdlib -nostartfiles -Wl,--no-relax -Wl,--start-group,--end-group \
 -o counter_la.elf ../../firmware/crt0_vex.S ../../firmware/isr.c counter_la.c
+
 riscv32-unknown-elf-objcopy -O verilog counter_la.elf counter_la.hex
+
 # to fix flash base address
 sed -ie 's/@10/@00/g' counter_la.hex
 

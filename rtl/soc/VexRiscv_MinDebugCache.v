@@ -3699,6 +3699,7 @@ module VexRiscv (
       _zz_iBusWishbone_ADR <= 3'b000;
       _zz_iBus_rsp_valid <= 1'b0;
       dBus_cmd_rValid <= 1'b0;
+      decode_to_execute_INSTRUCTION <= 32'h0;
     end else begin
       if(IBusCachedPlugin_fetchPc_correction) begin
         IBusCachedPlugin_fetchPc_correctionReg <= 1'b1;
@@ -4568,6 +4569,11 @@ module InstructionCache (
   end
 
   always @(posedge clk) begin
+   if(reset) begin
+    io_cpu_fetch_data_regNextWhen <= 32'h0;
+    lineLoader_address            <= 32'h0;
+    end
+   else begin
     if(io_cpu_fill_valid) begin
       lineLoader_address <= io_cpu_fill_payload;
     end
@@ -4601,6 +4607,7 @@ module InstructionCache (
     if(when_Fetcher_l398) begin
       io_cpu_fetch_data_regNextWhen <= _zz_io_cpu_fetch_data_regNextWhen;
     end
+   end
   end
 
 
