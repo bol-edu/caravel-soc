@@ -95,10 +95,6 @@
 // Caravel defined registers (by SPI address):
 // See:  doc/memory_map.txt
 //------------------------------------------------------------
-`define MPRJ_IO_PADS 38
-`define MPRJ_IO_PADS_1 19
-`define MPRJ_IO_PADS_2 19
-
 module housekeeping #(
     parameter GPIO_BASE_ADR = 32'h2600_0000,
     parameter SPI_BASE_ADR = 32'h2610_0000,
