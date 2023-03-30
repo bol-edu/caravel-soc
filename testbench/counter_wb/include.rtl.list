@@ -1,8 +1,8 @@
-# Headers
+## Headers
 -v ../../rtl/header/defines.v
 -v ../../rtl/header/user_defines.v
 
-# User project
+## User project
 -v ../../rtl/user/user_project_wrapper.v
 -v ../../rtl/user/user_proj_example.counter.v
 
@@ -14,7 +14,7 @@
 -v ../../vip/RAM256.v
 -v ../../vip/RAM128.v
 
-# Mgmt Core Wrapper
+## Mgmt Core Wrapper
 -v ../../rtl/soc/mgmt_core.v
 -v ../../rtl/soc/mgmt_core_wrapper.v
 -v ../../rtl/soc/VexRiscv_MinDebugCache.v
@@ -24,9 +24,7 @@
 -v ../../rtl/soc/mprj_io.v
 
 ## These blocks only needed for RTL sims							     
--v ../../rtl/soc/housekeeping_spi.v
-
-# -v $(CARAVEL_PATH)/rtl_new/chip_io_alt.v				     
+-v ../../rtl/soc/housekeeping_spi.v			     
 -v ../../rtl/soc/chip_io.v 		     
 -v ../../rtl/soc/gpio_control_block.v	     
 -v ../../rtl/soc/gpio_defaults_block.v	     
