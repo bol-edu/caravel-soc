@@ -18,6 +18,7 @@
 -v ../../rtl/soc/mgmt_core.v
 -v ../../rtl/soc/mgmt_core_wrapper.v
 -v ../../rtl/soc/VexRiscv_MinDebugCache.v
+# -v ../../rtl/soc/VexRiscv_MinDebug.v
 
 ## These blocks need to stay in RTL
 -v ../../rtl/soc/pads.v			

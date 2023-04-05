@@ -118,32 +118,33 @@ module gpio_control_block #(
     input mgmt_gpio_oeb, // Management to pad (output only)
 
     // Serial data chain for pad configuration
-    input serial_data_in,
-    output serial_data_out,
+    input  wire serial_data_in,
+    output reg  serial_data_out,
 
     // User-facing signals
-    input user_gpio_out, // User space to pad
-    input user_gpio_oeb, // Output enable (user)
-    output user_gpio_in, // Pad to user space
+    input  wire user_gpio_out, // User space to pad
+    input  wire user_gpio_oeb, // Output enable (user)
+    output wire user_gpio_in, // Pad to user space
 
     // Pad-facing signals (Pad GPIOv2)
-    output pad_gpio_holdover,
-    output pad_gpio_slow_sel,
-    output pad_gpio_vtrip_sel,
-    output pad_gpio_inenb,
-    output pad_gpio_ib_mode_sel,
-    output pad_gpio_ana_en,
-    output pad_gpio_ana_sel,
-    output pad_gpio_ana_pol,
-    output [2:0] pad_gpio_dm,
-    output pad_gpio_outenb,
-    output pad_gpio_out,
-    input pad_gpio_in,
+    output wire pad_gpio_holdover,
+    output wire pad_gpio_slow_sel,
+    output wire pad_gpio_vtrip_sel,
+    output wire pad_gpio_inenb,
+    output wire pad_gpio_ib_mode_sel,
+    output wire pad_gpio_ana_en,
+    output wire pad_gpio_ana_sel,
+    output wire pad_gpio_ana_pol,
+    output wire [2:0] pad_gpio_dm,
+    output wire pad_gpio_outenb,
+    output wire pad_gpio_out,
+
+    input  wire pad_gpio_in,
 
     // to provide a way to automatically disable/enable output
     // from the outside with needing a conb cell
-    output one,
-    output zero
+    output wire one,
+    output wire zero
 );
 
     /* Parameters defining the bit offset of each function in the chain */
@@ -173,6 +174,7 @@ module gpio_control_block #(
     reg gpio_ana_pol;
 
     /* Derived output values */
+    /*
     wire pad_gpio_holdover;
     wire pad_gpio_slow_sel;
     wire pad_gpio_vtrip_sel;
@@ -185,14 +187,18 @@ module gpio_control_block #(
     wire pad_gpio_outenb;
     wire pad_gpio_out;
     wire pad_gpio_in;
+    */
     wire one_unbuf;
     wire zero_unbuf;
+    /*
     wire one;
     wire zero;
-
     wire user_gpio_in;
+    */
     wire gpio_logic1;
+    /*
     reg serial_data_out;
+    */
 
     /* Serial shift for the above (latched) values */
     reg [PAD_CTRL_BITS-1:0] shift_register;
