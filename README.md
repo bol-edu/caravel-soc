@@ -117,8 +117,9 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  LA Test 1 started  
  LA Test 2 passed  
  counter_la_tb.v:170: $finish called at 973912500 (1ps)  
- /caravel-soc_cpu-trace/testbench/counter_la$ gtkwave counter_la.vcd
+ [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11248982/cpu_exec.log)
  
+ /caravel-soc_cpu-trace/testbench/counter_la$ gtkwave counter_la.vcd
  <img src="https://user-images.githubusercontent.com/11850122/232455404-f6dff915-4090-41e0-a36f-c153f37ed319.png" width=80%>
 
 * Counter with wishbone interface
@@ -145,10 +146,10 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  Monitor: MPRJ-Logic WB Started  
  Monitor: Mega-Project WB (RTL) Passed  
  counter_wb_tb.v:169: $finish called at 555412500 (1ps)  
- caravel-soc/testbench/counter_wb$ gtkwave counter_wb.vcd
- 
- <img src="https://user-images.githubusercontent.com/11850122/232457284-40285da7-464b-446c-a4d8-50d94c109431.png" width=80%>
+ [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11249000/cpu_exec.log)
 
+ caravel-soc_cpu-trace/testbench/counter_wb$ gtkwave counter_wb.vcd
+ <img src="https://user-images.githubusercontent.com/11850122/232457284-40285da7-464b-446c-a4d8-50d94c109431.png" width=80%>
  
 * GCD with (LA) logic analyzer interface
   * 32-bit x 2 LA input  
