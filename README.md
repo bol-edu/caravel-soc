@@ -45,7 +45,7 @@ Dumped into cpu_exec.log.
 ## Toolchain Prerequisites
 * [Ubuntu 20.04+](https://releases.ubuntu.com/focal/)
 * [RISC-V GCC Toolchains rv32i-4.0.0](https://github.com/stnolting/riscv-gcc-prebuilt)
-* [Icarus Verilog v13](http://iverilog.icarus.com/)
+* [Icarus Verilog v13](https://github.com/steveicarus/iverilog)
 * [GTKWave v3.3.103](https://gtkwave.sourceforge.net/)
 
 ## Install Icarus Verilog v13 from Source Compiling
