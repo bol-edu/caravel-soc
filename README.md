@@ -39,7 +39,8 @@ Dumped into cpu_exec.log.
         5744 :     #28 0000 10000110 0000006f              ; jal      zero,0x10000110
         6953 :     #29 0000 100002bc ff010113              ; addi       sp,   sp,-16
 
-[Demonstration link](https://www.youtube.com/watch?v=tQr13wYYrgw#t=101m18s) in Youtube
+[Demonstration link](https://www.youtube.com/watch?v=tQr13wYYrgw#t=101m18s) in Youtube  
+Author: [Patrick Lin](https://github.com/patrick-lin-git)
 <img src="https://user-images.githubusercontent.com/11850122/232430620-f8f27f4a-f806-4e75-917f-5f064c78f403.png" width=80%>
 
 ## Toolchain Prerequisites
