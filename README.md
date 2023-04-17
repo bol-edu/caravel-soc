@@ -64,7 +64,6 @@ validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/carav
 
 ## Setup and Config
 
-    $ sudo apt update
     $ sudo apt install gtkwave gcc -y
     $ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
     $ sudo mkdir /opt/riscv
@@ -117,7 +116,7 @@ validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/carav
  LA Test 2 passed  
  /caravel-soc/testbench/counter_la$ gtkwave counter_la.vcd
  
- * Counter with wishbone interface
+* Counter with wishbone interface
   * 32-bit wishbone input  
   * 32-bit wishbone output
   * 16-bit mrpj_io as output
@@ -141,7 +140,7 @@ validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/carav
  Monitor: Mega-Project WB (RTL) Passed  
  caravel-soc/testbench/counter_wb$ gtkwave counter_wb.vcd
  
- * GCD with (LA) logic analyzer interface
+* GCD with (LA) logic analyzer interface
   * 32-bit x 2 LA input  
   * 32-bit LA output
   * 16-bit mrpj_io as output
