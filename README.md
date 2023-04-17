@@ -60,7 +60,7 @@ Dumped into cpu_exec.log.
     $ sudo make install
     $ iverilog -v
 
-validate your [Icarus Verilog v13 Installation](https://github.com/bol-edu/caravel-soc/blob/cpu_trace/iverilog_v13_installation.log)
+validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/caravel-soc/blob/cpu_trace/iverilog_v13_installation.log)
 
 ## Directory Structure
 
