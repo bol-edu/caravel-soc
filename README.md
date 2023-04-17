@@ -1,11 +1,11 @@
 # Caravel SoC with CPU Trace
 The Caravel SOC verification has two parts, one is the Verilog test bench, another is riscv code. The riscv code is compiled into hex file and loaded into instruction memory. When running the simulation the riscv fetched instructions and execute them to validate the design. When we use waveform tool (gtkwave) to observe the waveform of the system operation, it is very difficult to associate the part of the waveform  and the related code. Here we propose an utility "riscv-tracer". It help us to read the waveform and understand the system operation much easier.
 
-More details in [riscv-tracer spec].(https://github.com/bol-edu/caravel-soc/files/11247594/riscv-tracer.pdf)
+More details in [riscv-tracer spec](https://github.com/bol-edu/caravel-soc/files/11247594/riscv-tracer.pdf).
 
 ## CPU Trace Example
+Dumped into cpu_exec.log.
 
-     Dumped in cpu_exec.log
     // Cycle :   Count hart    pc    opcode    reg=value   ; mnemonic
     //---------------------------------------------------------------
         1294 :      #0 0000 10000000 0b00006f              ; jal      zero,0x100000b0
