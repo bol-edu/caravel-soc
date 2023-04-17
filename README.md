@@ -113,7 +113,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  counter_la.hex loaded into memory  
  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
  VCD info: dumpfile counter_la.vcd opened for output.  
-         0.000ns MSG counter_la_tb, cpu_exec.log generated  
+        0.000ns MSG counter_la_tb, cpu_exec.log generated  
  LA Test 1 started  
  LA Test 2 passed  
  counter_la_tb.v:170: $finish called at 973912500 (1ps)  
@@ -141,9 +141,14 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  counter_wb.hex loaded into memory  
  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
  VCD info: dumpfile counter_wb.vcd opened for output.  
+        0.000ns MSG counter_wb_tb, cpu_exec.log generated  
  Monitor: MPRJ-Logic WB Started  
  Monitor: Mega-Project WB (RTL) Passed  
+ counter_wb_tb.v:169: $finish called at 555412500 (1ps)  
  caravel-soc/testbench/counter_wb$ gtkwave counter_wb.vcd
+ 
+ <img src="https://user-images.githubusercontent.com/11850122/232457284-40285da7-464b-446c-a4d8-50d94c109431.png" width=80%>
+
  
 * GCD with (LA) logic analyzer interface
   * 32-bit x 2 LA input  
