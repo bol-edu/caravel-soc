@@ -109,14 +109,14 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   ##################################################
   
  /caravel-soc_cpu-trace/testbench/counter_la$ ./run_sim_trace  
- Reading counter_la.hex
- counter_la.hex loaded into memory
- Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
- VCD info: dumpfile counter_la.vcd opened for output.
-         0.000ns MSG counter_la_tb, cpu_exec.log generated
- LA Test 1 started
- LA Test 2 passed
- counter_la_tb.v:170: $finish called at 973912500 (1ps)
+ Reading counter_la.hex  
+ counter_la.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile counter_la.vcd opened for output.  
+         0.000ns MSG counter_la_tb, cpu_exec.log generated  
+ LA Test 1 started  
+ LA Test 2 passed  
+ counter_la_tb.v:170: $finish called at 973912500 (1ps)  
  /caravel-soc_cpu-trace/testbench/counter_la$ gtkwave counter_la.vcd
  
  <img src="https://user-images.githubusercontent.com/11850122/232455404-f6dff915-4090-41e0-a36f-c153f37ed319.png" width=80%>
