@@ -48,6 +48,20 @@ Dumped into cpu_exec.log.
 * [Icarus Verilog v13](http://iverilog.icarus.com/)
 * [GTKWave v3.3.103](https://gtkwave.sourceforge.net/)
 
+## Install Icarus Verilog v13 from Source Compiling
+
+    $ sudo apt update
+    $ sudo apt install git autoconf gperf make build-essential g++ flex bison -y
+    $ git clone https://github.com/steveicarus/iverilog
+    $ cd iverilog/
+    $ sh autoconf.sh
+    $ ./configure
+    $ make
+    $ sudo make install
+    $ iverilog -v
+
+validate your [Icarus Verilog v13 Installation](https://github.com/bol-edu/caravel-soc/blob/cpu_trace/iverilog_v13_installation.log)
+
 ## Directory Structure
 
     ├── cvc-pdk                 # SKY130 OpenRAM SRAM Model
