@@ -40,7 +40,7 @@ Dumped into cpu_exec.log.
         6953 :     #29 0000 100002bc ff010113              ; addi       sp,   sp,-16
 
 [Demonstration link](https://www.youtube.com/watch?v=tQr13wYYrgw#t=101m18s) in Youtube
-<img src="https://user-images.githubusercontent.com/11850122/232425157-abd5af43-2bf7-4d77-a10b-dbc9f97760a7.png" width=80%>
+<img src="https://user-images.githubusercontent.com/11850122/232430139-4b079952-d31a-4af2-bf2a-19e1aaf8c3cd.png" width=80%>
 
 ## Toolchain Prerequisites
 * [Ubuntu 20.04+](https://releases.ubuntu.com/focal/)
