@@ -62,6 +62,20 @@ Dumped into cpu_exec.log.
 
 validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/caravel-soc/blob/cpu_trace/iverilog_v13_installation.log)
 
+## Setup and Config
+
+    $ sudo apt update
+    $ sudo apt install gtkwave gcc -y
+    $ sudo wget -O /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz https://github.com/stnolting/riscv-gcc-prebuilt/releases/download/rv32i-4.0.0/riscv32-unknown-elf.gcc-12.1.0.tar.gz
+    $ sudo mkdir /opt/riscv
+    $ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
+    $ git clone -b cpu-trace https://github.com/bol-edu/caravel-soc caravel-soc_cpu-trace
+    $ cd caravel-soc_cpu-trace/
+    $ chmod +x ./testbench/counter_la/run_sim_trace ./testbench/counter_wb/run_sim_trace ./testbench/gcd_la/run_sim_trace
+    $ chmod +x ./testbench/counter_la/run_clean ./testbench/counter_wb/run_clean ./testbench/gcd_la/run_clean
+    $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
+    $ source ~/.bashrc
+
 ## Directory Structure
 
     ├── cvc-pdk                 # SKY130 OpenRAM SRAM Model
@@ -75,6 +89,89 @@ validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/carav
     │   ├── counter_wb          # Counter with Wishbone Interface
     │   └── gcd_la              # GCD with Logic Analyzer Interface
     └── vip                     # Caravel Verification IP
+
+## CPU Trace Testbenches for Custom Designs
+
+* Counter with (LA) logic analyzer interface 
+  * 32-bit LA input  
+  * 32-bit LA output
+  * 16-bit mrpj_io as output
+  
+  Files for cpu trace simulation:  
+  ##################################################  
+  caravel-soc_cpu-trace/testbench/counter_la/counter_la.c  
+  caravel-soc_cpu-trace/testbench/counter_la/counter_la_tb.v  
+  caravel-soc_cpu-trace/testbench/counter_la/cpu_trace.v  
+  caravel-soc_cpu-trace/testbench/counter_la/dasm.v  
+  caravel-soc_cpu-trace/testbench/counter_la/include.rtl.list  
+  caravel-soc_cpu-trace/testbench/counter_la/run_sim_trace  
+  ##################################################
+  
+ /caravel-soc_cpu-trace/testbench/counter_la$ ./run_sim_trace  
+ Reading counter_la.hex  
+ counter_la.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile counter_la.vcd opened for output.  
+ LA Test 1 started  
+ output:  
+ LA Test 2 passed  
+ /caravel-soc/testbench/counter_la$ gtkwave counter_la.vcd
+ 
+ * Counter with wishbone interface
+  * 32-bit wishbone input  
+  * 32-bit wishbone output
+  * 16-bit mrpj_io as output
+  
+  Files for cpu trace simulation:  
+  ##################################################  
+  caravel-soc_cpu-trace/testbench/counter_wb/counter_wb.c  
+  caravel-soc_cpu-trace/testbench/counter_wb/counter_wb_tb.v  
+  caravel-soc_cpu-trace/testbench/counter_wb/cpu_trace.v  
+  caravel-soc_cpu-trace/testbench/counter_wb/dasm.v  
+  caravel-soc_cpu-trace/testbench/counter_wb/include.rtl.list  
+  caravel-soc_cpu-trace/testbench/counter_wb/run_sim_trace  
+  ##################################################
+  
+ caravel-soc_cpu-trace/testbench/counter_wb$ ./run_sim_trace  
+ Reading counter_wb.hex  
+ counter_wb.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile counter_wb.vcd opened for output.  
+ Monitor: MPRJ-Logic WB Started  
+ Monitor: Mega-Project WB (RTL) Passed  
+ caravel-soc/testbench/counter_wb$ gtkwave counter_wb.vcd
+ 
+ * GCD with (LA) logic analyzer interface
+  * 32-bit x 2 LA input  
+  * 32-bit LA output
+  * 16-bit mrpj_io as output
+  
+  Files for simulation:  
+  ##################################################  
+  caravel-soc_cpu-trace/testbench/gcd_la/gcd_la.c  
+  caravel-soc_cpu-trace/testbench/gcd_la/gcd_la_tb.v  
+  caravel-soc_cpu-trace/testbench/gcd_la/cpu_trace.v  
+  caravel-soc_cpu-trace/testbench/gcd_la/dasm.v  
+  caravel-soc_cpu-trace/testbench/gcd_la/include.rtl.list  
+  caravel-soc_cpu-trace/testbench/gcd_la/run_sim_trace  
+  ##################################################
+  
+ caravel-soc_cpu-trace/testbench/gcd_la$ ./run_sim_trace  
+ Reading gcd_la.hex  
+ gcd_la.hex loaded into memory  
+ Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
+ VCD info: dumpfile gcd_la.vcd opened for output.  
+ LA Test seq_gcd(10312050, 29460792)=138 started  
+ LA Test seq_gcd(10312050, 29460792)=138 passed  
+ LA Test seq_gcd(1993627629, 1177417612)=7 started  
+ LA Test seq_gcd(1993627629, 1177417612)=7 passed  
+ LA Test seq_gcd(2097015289, 3812041926)=1 started  
+ LA Test seq_gcd(2097015289, 3812041926)=1 passed  
+ LA Test seq_gcd(1924134885, 3151131255)=135 started  
+ LA Test seq_gcd(1924134885, 3151131255)=135 passed  
+ LA Test seq_gcd(992211318, 512609597)=1 started  
+ LA Test seq_gcd(992211318, 512609597)=1 passed  
+ caravel-soc/testbench/gcd_la$ gtkwave gcd_la.vcd  
 
 ## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
