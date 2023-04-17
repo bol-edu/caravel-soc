@@ -171,6 +171,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  gcd_la.hex loaded into memory  
  Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
  VCD info: dumpfile gcd_la.vcd opened for output.  
+        0.000ns MSG gcd_la_tb, cpu_exec.log generated  
  LA Test seq_gcd(10312050, 29460792)=138 started  
  LA Test seq_gcd(10312050, 29460792)=138 passed  
  LA Test seq_gcd(1993627629, 1177417612)=7 started  
@@ -181,7 +182,11 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  LA Test seq_gcd(1924134885, 3151131255)=135 passed  
  LA Test seq_gcd(992211318, 512609597)=1 started  
  LA Test seq_gcd(992211318, 512609597)=1 passed  
- caravel-soc/testbench/gcd_la$ gtkwave gcd_la.vcd  
+ gcd_la_tb.v:189: $finish called at 2568362500 (1ps)   
+ [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11249070/cpu_exec.log)
+
+ caravel-soc_cpu-trace/testbench/gcd_la$ gtkwave gcd_la.vcd  
+ <img src="https://user-images.githubusercontent.com/11850122/232460714-f617dddd-719f-4faa-b32d-ec232426c331.png" width=80%>
 
 ## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
