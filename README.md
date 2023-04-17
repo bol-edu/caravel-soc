@@ -157,7 +157,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 32-bit LA output
   * 16-bit mrpj_io as output
   
-  Files for simulation:  
+  Files for cpu trace simulation:  
   ##################################################  
   caravel-soc_cpu-trace/testbench/gcd_la/gcd_la.c  
   caravel-soc_cpu-trace/testbench/gcd_la/gcd_la_tb.v  
