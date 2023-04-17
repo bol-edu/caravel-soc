@@ -2,10 +2,10 @@
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
 [*] Tue Feb 21 09:05:38 2023
 [*]
-[dumpfile] "/home/hls05/vexriscv_soc/testbench/gcd_la/gcd_la.vcd"
+[dumpfile] "./gcd_la.vcd"
 [dumpfile_mtime] "Tue Feb 21 08:40:45 2023"
 [dumpfile_size] 45430679
-[savefile] "/home/hls05/vexriscv_soc/testbench/gcd_la/waveform.gtkw"
+[savefile] "./waveform.gtkw"
 [timestart] 938950000
 [size] 1536 793
 [pos] -9 -41
