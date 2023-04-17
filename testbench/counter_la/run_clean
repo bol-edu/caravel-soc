@@ -1,0 +1,2 @@
+rm -rf xsim.dir/ *.log *.pb *.jou *.wdb
+rm -f *.vcd *.elf *.hex *.hexe *.vvp *log

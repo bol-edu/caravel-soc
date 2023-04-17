@@ -1,0 +1,95 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Feb 21 08:58:58 2023
+[*]
+[dumpfile] "./counter_wb.vcd"
+[dumpfile_mtime] "Tue Feb 21 08:49:07 2023"
+[dumpfile_size] 16639107
+[savefile] "./waveform.gtkw"
+[timestart] 0
+[size] 1536 793
+[pos] -35 -35
+*-18.000000 939512500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] counter_wb_tb.
+[treeopen] counter_wb_tb.uut.
+[treeopen] counter_wb_tb.uut.mprj.mprj.
+[treeopen] counter_wb_tb.uut.padframe.
+[treeopen] counter_wb_tb.uut.padframe.mprj_pads.
+[treeopen] counter_wb_tb.uut.soc.core.
+[treeopen] counter_wb_tb.uut.soc.core.VexRiscv.
+[sst_width] 292
+[signals_width] 335
+[sst_expanded] 1
+[sst_vpaned_height] 445
+@200
+-#counter_wb_tb
+@28
+counter_wb_tb.clock
+counter_wb_tb.RSTB
+counter_wb_tb.CSB
+counter_wb_tb.gpio
+@22
+counter_wb_tb.mprj_io[37:0]
+counter_wb_tb.checkbits[15:0]
+@28
+counter_wb_tb.flash_clk
+counter_wb_tb.flash_csb
+counter_wb_tb.flash_io0
+counter_wb_tb.flash_io1
+@200
+-
+-#uut(caravel)
+@28
+counter_wb_tb.uut.mprj_ack_i_core
+counter_wb_tb.uut.caravel_clk
+counter_wb_tb.uut.caravel_rstn
+counter_wb_tb.uut.clock
+counter_wb_tb.uut.gpio
+counter_wb_tb.uut.mprj_clock
+@22
+counter_wb_tb.uut.mprj_dat_i_core[31:0]
+counter_wb_tb.uut.mprj_dat_i_user[31:0]
+counter_wb_tb.uut.mprj_dat_o_core[31:0]
+counter_wb_tb.uut.mprj_dat_o_user[31:0]
+counter_wb_tb.uut.mprj_io[37:0]
+counter_wb_tb.uut.user_io_out[37:0]
+@200
+-
+-#soc
+@28
+counter_wb_tb.uut.soc.mprj_ack_i
+counter_wb_tb.uut.soc.core.shared_ack
+counter_wb_tb.uut.soc.core.VexRiscv.iBusWishbone_ACK
+counter_wb_tb.uut.soc.core.VexRiscv.iBusWishbone_CYC
+@22
+counter_wb_tb.uut.soc.core.VexRiscv.iBusWishbone_DAT_MISO[31:0]
+@28
+counter_wb_tb.uut.soc.core.mgmtsoc_dbus_dbus_ack
+@22
+counter_wb_tb.uut.soc.core.mgmtsoc_dbus_dbus_adr[29:0]
+counter_wb_tb.uut.soc.core.mgmtsoc_dbus_dbus_dat_w[31:0]
+@200
+-
+-#mprj
+@22
+counter_wb_tb.uut.mprj.mprj.la_data_in[127:0]
+counter_wb_tb.uut.mprj.mprj.la_data_out[127:0]
+counter_wb_tb.uut.mprj.mprj.io_out[37:0]
+@200
+-
+-#counter
+@28
+counter_wb_tb.uut.mprj.mprj.counter.clk
+counter_wb_tb.uut.mprj.mprj.counter.reset
+@22
+counter_wb_tb.uut.mprj.mprj.counter.la_write[31:0]
+counter_wb_tb.uut.mprj.mprj.counter.la_input[31:0]
+counter_wb_tb.uut.mprj.mprj.counter.count[31:0]
+@23
+counter_wb_tb.uut.mprj.mprj.counter.wdata[31:0]
+@22
+counter_wb_tb.uut.mprj.mprj.counter.rdata[31:0]
+@28
+counter_wb_tb.uut.mprj.mprj.counter.ready
+[pattern_trace] 1
+[pattern_trace] 0

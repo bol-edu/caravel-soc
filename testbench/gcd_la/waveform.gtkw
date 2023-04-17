@@ -1,0 +1,103 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Feb 21 09:05:38 2023
+[*]
+[dumpfile] "./gcd_la.vcd"
+[dumpfile_mtime] "Tue Feb 21 08:40:45 2023"
+[dumpfile_size] 45430679
+[savefile] "./waveform.gtkw"
+[timestart] 938950000
+[size] 1536 793
+[pos] -9 -41
+*-18.000000 939512500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] gcd_la_tb.
+[treeopen] gcd_la_tb.uut.
+[treeopen] gcd_la_tb.uut.mprj.
+[treeopen] gcd_la_tb.uut.mprj.mprj.
+[treeopen] gcd_la_tb.uut.padframe.mprj_pads.
+[treeopen] gcd_la_tb.uut.soc.core.
+[treeopen] gcd_la_tb.uut.soc.core.VexRiscv.
+[sst_width] 292
+[signals_width] 335
+[sst_expanded] 1
+[sst_vpaned_height] 445
+@200
+-#gcd_la_tb
+@28
+gcd_la_tb.clock
+gcd_la_tb.RSTB
+gcd_la_tb.CSB
+gcd_la_tb.gpio
+gcd_la_tb.uart_tx
+@22
+gcd_la_tb.mprj_io[37:0]
+gcd_la_tb.checkbits[15:0]
+@28
+gcd_la_tb.flash_clk
+gcd_la_tb.flash_csb
+gcd_la_tb.flash_io0
+gcd_la_tb.flash_io1
+@200
+-
+-#uut(caravel)
+@28
+gcd_la_tb.uut.mprj_ack_i_core
+gcd_la_tb.uut.caravel_clk
+gcd_la_tb.uut.caravel_rstn
+gcd_la_tb.uut.clock
+gcd_la_tb.uut.gpio
+gcd_la_tb.uut.mprj_clock
+@22
+gcd_la_tb.uut.mprj_dat_i_core[31:0]
+gcd_la_tb.uut.mprj_dat_i_user[31:0]
+gcd_la_tb.uut.mprj_dat_o_core[31:0]
+gcd_la_tb.uut.mprj_dat_o_user[31:0]
+gcd_la_tb.uut.mprj_io[37:0]
+gcd_la_tb.uut.user_io_out[37:0]
+@200
+-
+-#soc
+@28
+gcd_la_tb.uut.soc.mprj_ack_i
+gcd_la_tb.uut.soc.core.shared_ack
+gcd_la_tb.uut.soc.core.VexRiscv.iBusWishbone_ACK
+gcd_la_tb.uut.soc.core.VexRiscv.iBusWishbone_CYC
+@22
+gcd_la_tb.uut.soc.core.VexRiscv.iBusWishbone_DAT_MISO[31:0]
+@28
+gcd_la_tb.uut.soc.core.mgmtsoc_dbus_dbus_ack
+@22
+gcd_la_tb.uut.soc.core.mgmtsoc_dbus_dbus_adr[29:0]
+gcd_la_tb.uut.soc.core.mgmtsoc_dbus_dbus_dat_w[31:0]
+@200
+-
+-#mprj
+@22
+gcd_la_tb.uut.mprj.mprj.la_data_in[127:0]
+gcd_la_tb.uut.mprj.mprj.la_data_out[127:0]
+gcd_la_tb.uut.mprj.mprj.io_out[37:0]
+@200
+-
+-#gcd
+@28
+gcd_la_tb.uut.mprj.mprj.seq_gcd.clk
+gcd_la_tb.uut.mprj.mprj.seq_gcd.rst_n
+@22
+gcd_la_tb.uut.mprj.mprj.seq_gcd.la_write_a[31:0]
+@23
+gcd_la_tb.uut.mprj.mprj.seq_gcd.la_write_b[31:0]
+@28
+gcd_la_tb.uut.mprj.mprj.seq_gcd.load_int
+@22
+gcd_la_tb.uut.mprj.mprj.seq_gcd.a_i[31:0]
+gcd_la_tb.uut.mprj.mprj.seq_gcd.b_i[31:0]
+gcd_la_tb.uut.mprj.mprj.seq_gcd.a_muxed[31:0]
+gcd_la_tb.uut.mprj.mprj.seq_gcd.b_muxed[31:0]
+@28
+gcd_la_tb.uut.mprj.mprj.seq_gcd.ready
+@22
+gcd_la_tb.uut.mprj.mprj.seq_gcd.gcd_o[31:0]
+@28
+gcd_la_tb.uut.mprj.mprj.seq_gcd.done_o
+[pattern_trace] 1
+[pattern_trace] 0
