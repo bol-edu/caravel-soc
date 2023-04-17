@@ -75,6 +75,8 @@ validate your [Icarus Verilog v13 installation](https://github.com/bol-edu/carav
     $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
     $ source ~/.bashrc
 
+validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-trace/setup_config.log)
+
 ## Directory Structure
 
     ├── cvc-pdk                 # SKY130 OpenRAM SRAM Model
