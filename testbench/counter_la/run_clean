@@ -1,2 +1,0 @@
-rm -rf ./gdb.debug ./gdbwave.debug
-rm -f *.vcd *.hex

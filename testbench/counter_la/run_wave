@@ -1,2 +1,0 @@
-#!/bin/bash
-gtkwave counter_la.vcd &
