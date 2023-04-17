@@ -106,8 +106,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   caravel-soc_cpu-trace/testbench/counter_la/dasm.v  
   caravel-soc_cpu-trace/testbench/counter_la/include.rtl.list  
   caravel-soc_cpu-trace/testbench/counter_la/run_sim_trace  
-  ##################################################  
-  [Note: iVerilog v13 has a unknown issue invoking simulation hang at counter_la.c:85. We comment out it without changing whole testbench behavior.]  
+  ##################################################
   
  /caravel-soc_cpu-trace/testbench/counter_la$ ./run_sim_trace  
  Reading counter_la.hex  
@@ -136,7 +135,8 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   caravel-soc_cpu-trace/testbench/counter_wb/dasm.v  
   caravel-soc_cpu-trace/testbench/counter_wb/include.rtl.list  
   caravel-soc_cpu-trace/testbench/counter_wb/run_sim_trace  
-  ##################################################
+  ##################################################  
+  [Note: iVerilog v13 has a unknown issue invoking simulation hang at counter_wb.c:85. We comment out it without changing whole testbench behavior.]  
   
  caravel-soc_cpu-trace/testbench/counter_wb$ ./run_sim_trace  
  Reading counter_wb.hex  
