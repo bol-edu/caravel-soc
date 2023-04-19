@@ -72,14 +72,14 @@ validate your [setup gdbwave - post simulation debugging](https://github.com/bol
 
 ## Testbenches for Custom Designs
 In each testbench subdirectory contains 
-1. firmware driver (.c),
-2. RTL testbench (.v), 
-3. included RTL files (.list), 
-4. run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation, 
-5. GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module, 
-6. run debugging script produces gdb elf file, fst waveform file and starts gdbwave service (gdb remote target), 
-7. make files and config file for gdb and gdbwave debugging, 
-8. run clean script removes all simulation and debugging objects. The run debugging script use cases will be demonstrated in next section.
+1. Firmware driver (.c).  
+2. RTL testbench (.v). 
+3. Included RTL files (.list). 
+4. Run simulation script calls riscv32 command to compile c source to hex target and invokes iverilog && vvp to run RTL simulation. 
+5. GTKWave save file (.gtkw) saves selected signals from caravel-soc modules and corresponded testbench module. 
+6. Run debugging script produces gdb elf file, fst waveform file and starts gdbwave service (gdb remote target). 
+7. Make files and config file for gdb and gdbwave debugging. 
+8. Run clean script removes all simulation and debugging objects. The run debugging script use cases will be demonstrated in next section.
 
 ### Counter with (LA) logic analyzer interface 
 * 32-bit LA input  
@@ -168,7 +168,7 @@ caravel-soc/testbench/gcd_la$ gtkwave waveform.gtkw
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
 ## GDB + GDBWave Debugging for Custom Designs
-* Counter with (LA) logic analyzer interface
+### Counter with (LA) logic analyzer interface
 
 Files for debugging:  
 ```  
@@ -187,7 +187,7 @@ execute run_debug to start gdbwave service and wait gdb connection
 ```
  <img src="https://user-images.githubusercontent.com/11850122/224581458-7b0aceac-e9eb-4489-8395-8f88171d6fef.png" width=40%>
 
- open another ssh terminal, change to ~/caravel-soc/testbench/counter_la/gdb.debug direcctory and run make gdb  
+ open another ssh terminal, change to `~/caravel-soc/testbench/counter_la/gdb.debug` direcctory and run `make gdb`  
  executed gdb debug commands: (1) n (2) b main (3) c (4) b 122 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
     
  <img src="https://user-images.githubusercontent.com/11850122/224581467-7908c1cd-e6c3-4788-9005-944a8e314969.png" width=62%>
@@ -213,7 +213,7 @@ caravel-soc/testbench/counter_wb/include.rtl.list
 caravel-soc/testbench/counter_wb/run_debug  
 ```
 
-#execute run_debug to start gdbwave service and wait gdb connection  
+execute run_debug to start gdbwave service and wait gdb connection  
  ```console
  /caravel-soc/testbench/counter_wb$ ./run_debug
 ```
@@ -245,7 +245,7 @@ caravel-soc/testbench/gcd_la/include.rtl.list
 caravel-soc/testbench/gcd_la/run_debug  
 ```
   
- #execute run_debug to start gdbwave service and wait gdb connection  
+ execute run_debug to start gdbwave service and wait gdb connection  
  ```console
  /caravel-soc/testbench/gcd_la$ ./run_debug
  ```
