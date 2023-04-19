@@ -95,7 +95,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
 
 ## CPU Trace Testbenches for Custom Designs
 
-* Counter with (LA) logic analyzer interface 
+### Counter with (LA) logic analyzer interface 
   * 32-bit LA input  
   * 32-bit LA output
   * 16-bit mrpj_io as output
@@ -127,7 +127,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  ```
  <img src="https://user-images.githubusercontent.com/11850122/232455404-f6dff915-4090-41e0-a36f-c153f37ed319.png" width=80%>
 
-* Counter with wishbone interface
+### Counter with wishbone interface
   * 32-bit wishbone input  
   * 32-bit wishbone output
   * 16-bit mrpj_io as output
@@ -161,7 +161,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  ```
  <img src="https://user-images.githubusercontent.com/11850122/232457284-40285da7-464b-446c-a4d8-50d94c109431.png" width=80%>
  
-* GCD with (LA) logic analyzer interface
+### GCD with (LA) logic analyzer interface
   * 32-bit x 2 LA input  
   * 32-bit LA output
   * 16-bit mrpj_io as output
