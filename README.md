@@ -42,15 +42,14 @@ $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
 $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
 $ source ~/.bashrc
 ```
-
 validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/setup_config.log)
 
 ## Setup GDBWave - Post Simulation Debugging
-
-    $ sudo apt install make g++ zlib1g-dev gdb -y
-    $ git clone https://github.com/tomverbeure/gdbwave.git
-    $ pushd ~/gdbwave/src && make && popd
-
+```console
+$ sudo apt install make g++ zlib1g-dev gdb -y
+$ git clone https://github.com/tomverbeure/gdbwave.git
+$ pushd ~/gdbwave/src && make && popd
+```
 validate your [setup gdbwave - post simulation debugging](https://github.com/bol-edu/caravel-soc/blob/main/setup_gdbwave.log)
 
 
