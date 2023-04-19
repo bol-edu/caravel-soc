@@ -100,16 +100,16 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 32-bit LA output
   * 16-bit mrpj_io as output
   
-  Files for cpu trace simulation:  
-  ```
-  caravel-soc_cpu-trace/testbench/counter_la/counter_la.c  
-  caravel-soc_cpu-trace/testbench/counter_la/counter_la_tb.v  
-  caravel-soc_cpu-trace/testbench/counter_la/cpu_trace.v  
-  caravel-soc_cpu-trace/testbench/counter_la/dasm.v  
-  caravel-soc_cpu-trace/testbench/counter_la/include.rtl.list  
-  caravel-soc_cpu-trace/testbench/counter_la/run_sim_trace  
-  ```
-  ```console
+ Files for cpu trace simulation:  
+ ```
+ caravel-soc_cpu-trace/testbench/counter_la/counter_la.c  
+ caravel-soc_cpu-trace/testbench/counter_la/counter_la_tb.v  
+ caravel-soc_cpu-trace/testbench/counter_la/cpu_trace.v  
+ caravel-soc_cpu-trace/testbench/counter_la/dasm.v  
+ caravel-soc_cpu-trace/testbench/counter_la/include.rtl.list  
+ caravel-soc_cpu-trace/testbench/counter_la/run_sim_trace  
+ ```
+ ```console
  /caravel-soc_cpu-trace/testbench/counter_la$ ./run_sim_trace  
  Reading counter_la.hex  
  counter_la.hex loaded into memory  
@@ -132,16 +132,16 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 32-bit wishbone output
   * 16-bit mrpj_io as output
   
-  Files for cpu trace simulation:  
-  ```  
-  caravel-soc_cpu-trace/testbench/counter_wb/counter_wb.c  
-  caravel-soc_cpu-trace/testbench/counter_wb/counter_wb_tb.v  
-  caravel-soc_cpu-trace/testbench/counter_wb/cpu_trace.v  
-  caravel-soc_cpu-trace/testbench/counter_wb/dasm.v  
-  caravel-soc_cpu-trace/testbench/counter_wb/include.rtl.list  
-  caravel-soc_cpu-trace/testbench/counter_wb/run_sim_trace  
-  ``` 
-  [Note: iVerilog v13 has a unknown issue invoking simulation hang at [counter_wb.c:85](https://github.com/bol-edu/caravel-soc/blob/cpu-trace/testbench/counter_wb/counter_wb.c). We comment out it without changing major testbench behavior.]  
+ Files for cpu trace simulation:  
+ ```  
+ caravel-soc_cpu-trace/testbench/counter_wb/counter_wb.c  
+ caravel-soc_cpu-trace/testbench/counter_wb/counter_wb_tb.v  
+ caravel-soc_cpu-trace/testbench/counter_wb/cpu_trace.v  
+ caravel-soc_cpu-trace/testbench/counter_wb/dasm.v  
+ caravel-soc_cpu-trace/testbench/counter_wb/include.rtl.list  
+ caravel-soc_cpu-trace/testbench/counter_wb/run_sim_trace  
+ ``` 
+ [Note: iVerilog v13 has a unknown issue invoking simulation hang at [counter_wb.c:85](https://github.com/bol-edu/caravel-soc/blob/cpu-trace/testbench/counter_wb/counter_wb.c). We comment out it without changing major testbench behavior.]  
  
  ```console 
  caravel-soc_cpu-trace/testbench/counter_wb$ ./run_sim_trace  
@@ -166,15 +166,15 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 32-bit LA output
   * 16-bit mrpj_io as output
   
-  Files for cpu trace simulation:  
-  ```
-  caravel-soc_cpu-trace/testbench/gcd_la/gcd_la.c  
-  caravel-soc_cpu-trace/testbench/gcd_la/gcd_la_tb.v  
-  caravel-soc_cpu-trace/testbench/gcd_la/cpu_trace.v  
-  caravel-soc_cpu-trace/testbench/gcd_la/dasm.v  
-  caravel-soc_cpu-trace/testbench/gcd_la/include.rtl.list  
-  caravel-soc_cpu-trace/testbench/gcd_la/run_sim_trace  
-  ```
+ Files for cpu trace simulation:  
+ ```
+ caravel-soc_cpu-trace/testbench/gcd_la/gcd_la.c  
+ caravel-soc_cpu-trace/testbench/gcd_la/gcd_la_tb.v  
+ caravel-soc_cpu-trace/testbench/gcd_la/cpu_trace.v  
+ caravel-soc_cpu-trace/testbench/gcd_la/dasm.v  
+ caravel-soc_cpu-trace/testbench/gcd_la/include.rtl.list  
+ caravel-soc_cpu-trace/testbench/gcd_la/run_sim_trace  
+ ```
  ```console 
  caravel-soc_cpu-trace/testbench/gcd_la$ ./run_sim_trace  
  Reading gcd_la.hex  
@@ -197,9 +197,9 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11249070/cpu_exec.log)
 
  ```console
- caravel-soc_cpu-trace/testbench/gcd_la$ gtkwave gcd_la.vcd  
- <img src="https://user-images.githubusercontent.com/11850122/232460714-f617dddd-719f-4faa-b32d-ec232426c331.png" width=80%>
+ caravel-soc_cpu-trace/testbench/gcd_la$ gtkwave gcd_la.vcd 
  ```
+ <img src="https://user-images.githubusercontent.com/11850122/232460714-f617dddd-719f-4faa-b32d-ec232426c331.png" width=80%>
  
 ## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
