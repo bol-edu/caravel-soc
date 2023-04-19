@@ -101,15 +101,15 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 16-bit mrpj_io as output
   
   Files for cpu trace simulation:  
-  ##################################################  
+  ```
   caravel-soc_cpu-trace/testbench/counter_la/counter_la.c  
   caravel-soc_cpu-trace/testbench/counter_la/counter_la_tb.v  
   caravel-soc_cpu-trace/testbench/counter_la/cpu_trace.v  
   caravel-soc_cpu-trace/testbench/counter_la/dasm.v  
   caravel-soc_cpu-trace/testbench/counter_la/include.rtl.list  
   caravel-soc_cpu-trace/testbench/counter_la/run_sim_trace  
-  ##################################################
-  
+  ```
+  ```console
  /caravel-soc_cpu-trace/testbench/counter_la$ ./run_sim_trace  
  Reading counter_la.hex  
  counter_la.hex loaded into memory  
@@ -119,9 +119,12 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  LA Test 1 started  
  LA Test 2 passed  
  counter_la_tb.v:170: $finish called at 973912500 (1ps)  
+ ```
  [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11248982/cpu_exec.log)
  
+ ```console
  /caravel-soc_cpu-trace/testbench/counter_la$ gtkwave counter_la.vcd
+ ```
  <img src="https://user-images.githubusercontent.com/11850122/232455404-f6dff915-4090-41e0-a36f-c153f37ed319.png" width=80%>
 
 * Counter with wishbone interface
@@ -130,16 +133,17 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 16-bit mrpj_io as output
   
   Files for cpu trace simulation:  
-  ##################################################  
+  ```  
   caravel-soc_cpu-trace/testbench/counter_wb/counter_wb.c  
   caravel-soc_cpu-trace/testbench/counter_wb/counter_wb_tb.v  
   caravel-soc_cpu-trace/testbench/counter_wb/cpu_trace.v  
   caravel-soc_cpu-trace/testbench/counter_wb/dasm.v  
   caravel-soc_cpu-trace/testbench/counter_wb/include.rtl.list  
   caravel-soc_cpu-trace/testbench/counter_wb/run_sim_trace  
-  ##################################################  
+  ``` 
   [Note: iVerilog v13 has a unknown issue invoking simulation hang at [counter_wb.c:85](https://github.com/bol-edu/caravel-soc/blob/cpu-trace/testbench/counter_wb/counter_wb.c). We comment out it without changing major testbench behavior.]  
-  
+ 
+ ```console 
  caravel-soc_cpu-trace/testbench/counter_wb$ ./run_sim_trace  
  Reading counter_wb.hex  
  counter_wb.hex loaded into memory  
@@ -148,10 +152,13 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
         0.000ns MSG counter_wb_tb, cpu_exec.log generated  
  Monitor: MPRJ-Logic WB Started  
  Monitor: Mega-Project WB (RTL) Passed  
- counter_wb_tb.v:169: $finish called at 555412500 (1ps)  
+ counter_wb_tb.v:169: $finish called at 555412500 (1ps)
+ ```
  [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11249000/cpu_exec.log)
 
+ ```console
  caravel-soc_cpu-trace/testbench/counter_wb$ gtkwave counter_wb.vcd
+ ```
  <img src="https://user-images.githubusercontent.com/11850122/232457284-40285da7-464b-446c-a4d8-50d94c109431.png" width=80%>
  
 * GCD with (LA) logic analyzer interface
@@ -160,15 +167,15 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
   * 16-bit mrpj_io as output
   
   Files for cpu trace simulation:  
-  ##################################################  
+  ```
   caravel-soc_cpu-trace/testbench/gcd_la/gcd_la.c  
   caravel-soc_cpu-trace/testbench/gcd_la/gcd_la_tb.v  
   caravel-soc_cpu-trace/testbench/gcd_la/cpu_trace.v  
   caravel-soc_cpu-trace/testbench/gcd_la/dasm.v  
   caravel-soc_cpu-trace/testbench/gcd_la/include.rtl.list  
   caravel-soc_cpu-trace/testbench/gcd_la/run_sim_trace  
-  ##################################################
-  
+  ```
+ ```console 
  caravel-soc_cpu-trace/testbench/gcd_la$ ./run_sim_trace  
  Reading gcd_la.hex  
  gcd_la.hex loaded into memory  
@@ -185,12 +192,15 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/cpu-t
  LA Test seq_gcd(1924134885, 3151131255)=135 passed  
  LA Test seq_gcd(992211318, 512609597)=1 started  
  LA Test seq_gcd(992211318, 512609597)=1 passed  
- gcd_la_tb.v:189: $finish called at 2568362500 (1ps)   
+ gcd_la_tb.v:189: $finish called at 2568362500 (1ps)  
+ ```
  [cpu_exec.log](https://github.com/bol-edu/caravel-soc/files/11249070/cpu_exec.log)
 
+ ```console
  caravel-soc_cpu-trace/testbench/gcd_la$ gtkwave gcd_la.vcd  
  <img src="https://user-images.githubusercontent.com/11850122/232460714-f617dddd-719f-4faa-b32d-ec232426c331.png" width=80%>
-
+ ```
+ 
 ## Toolchain Reference Manuals
 * [Documentation for Icarus Verilog](https://steveicarus.github.io/iverilog/)
 * [GTKWave 3.3 Wave Analyzer User's Guide](https://gtkwave.sourceforge.net/gtkwave.pdf)
