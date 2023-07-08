@@ -185,12 +185,13 @@ caravel-soc/testbench/counter_la/run_debug
   
 execute run_debug to start gdbwave service and wait gdb connection  
 ```console
-/caravel-soc/testbench/counter_la$ ./run_debug
+$ cd ~/caravel-soc/testbench/counter_la
+$ ./run_debug
 ```
  <img src="https://user-images.githubusercontent.com/11850122/224581458-7b0aceac-e9eb-4489-8395-8f88171d6fef.png" width=40%>
 
- open another ssh terminal, change to `~/caravel-soc/testbench/counter_la/gdb.debug` direcctory and run `make gdb`  
- executed gdb debug commands: (1) n (2) b main (3) c (4) b 122 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
+ open another ssh terminal, change direcctory `cd ~/caravel-soc/testbench/counter_la/gdb.debug` and run `make gdb`, then  
+ execute gdb debug commands: (1) n (2) b main (3) c (4) b 122 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
     
  <img src="https://user-images.githubusercontent.com/11850122/224581467-7908c1cd-e6c3-4788-9005-944a8e314969.png" width=62%>
  
@@ -216,13 +217,14 @@ caravel-soc/testbench/counter_wb/run_debug
 ```
 
 execute run_debug to start gdbwave service and wait gdb connection  
- ```console
- /caravel-soc/testbench/counter_wb$ ./run_debug
+```console
+$ cd ~/caravel-soc/testbench/counter_wb
+$ ./run_debug
 ```
 <img src="https://user-images.githubusercontent.com/11850122/224583251-8e50e08f-e6c0-44bf-9b02-6f2ef353e0bd.png" width=40%>
 
-open another ssh terminal, change to `~/caravel-soc/testbench/counter_wb/gdb.debug` direcctory and run `make gdb`
-executed gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
+open another ssh terminal, change direcctory `cd ~/caravel-soc/testbench/counter_wb/gdb.debug` and run `make gdb`, then  
+execute gdb debug commands: (1) n (2) b main (3) c (4) b 83 (5) c (6) list (7) n (8) n (9) n (10) n (11) quit   
    
  <img src="https://user-images.githubusercontent.com/11850122/224583295-f2485848-9581-484e-82c5-e54b0e5c0af7.png" width=52%>
  
@@ -249,12 +251,13 @@ caravel-soc/testbench/gcd_la/run_debug
   
  execute run_debug to start gdbwave service and wait gdb connection  
  ```console
- /caravel-soc/testbench/gcd_la$ ./run_debug
+ $ cd ~/caravel-soc/testbench/gcd_la
+ $ ./run_debug
  ```
  <img src="https://user-images.githubusercontent.com/11850122/224579561-adf3a8a7-bc87-4af8-944f-65d0b2b438dc.png" width=40%>
 
- open another ssh terminal, change to `~/caravel-soc/testbench/gcd_la/gdb.debug` direcctory and run `make gdb`
- executed gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
+ open another ssh terminal, change direcctory `cd ~/caravel-soc/testbench/gcd_la/gdb.debug` and run `make gdb`, then  
+ execute gdb debug commands: (1) n (2) b main (3) c (4) b 148 (5) c (6) list (7) p i (8) c (9) p i (10) c (11) p i (12) c   
  (13) p i (14) c (15) p i (16) n (17) n (18) n (19) n (20) quit
   
  <img src="https://user-images.githubusercontent.com/11850122/224579568-7efc1292-f6d7-4e6c-9fe4-3f253f3cc947.png" width=48%>
@@ -271,8 +274,11 @@ caravel-soc/testbench/gcd_la/run_debug
 ## Trace Verilog Code with Vim + vtags
 We use vim + vtags to find signal trace source/drive target. First case, we demonstrate a signal *mprj_io* at gcd_la_tb module (gcd_la_tb.v) can be traced back to caravel module (cavavel.v) and chip_io module (chip_io.v).
 
-caravel-soc$ vtags  
-caravel-soc$ vim vtags.db/  
+```console
+$ cd ~/caravel-soc
+$ vtags
+$ vim vtags.db/
+```
 ----------------Top Module List-------------  
 0   : counter_la_tb  
 1   : counter_wb_tb  
