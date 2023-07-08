@@ -95,7 +95,8 @@ caravel-soc/testbench/counter_la/waveform.gtkw
 ```
   
 ```console
-/caravel-soc/testbench/counter_la$ ./run_sim  
+$ cd ~/caravel-soc/testbench/counter_la
+$ ./run_sim
 Reading counter_la.hex  
 counter_la.hex loaded into memory  
 Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
@@ -103,7 +104,7 @@ VCD info: dumpfile counter_la.vcd opened for output.
 LA Test 1 started  
 output:  
 LA Test 2 passed  
-/caravel-soc/testbench/counter_la$ gtkwave waveform.gtkw  
+$ gtkwave waveform.gtkw  
 ```
 ![counter_la_waveform](https://user-images.githubusercontent.com/11850122/220594971-0dc2047d-6883-445e-944e-4cc736c0ab7e.png)
 
@@ -122,14 +123,15 @@ caravel-soc/testbench/counter_wb/waveform.gtkw
 ```
   
 ```console
-caravel-soc/testbench/counter_wb$ ./run_sim  
+$ cd ~/caravel-soc/testbench/counter_wb
+$ ./run_sim
 Reading counter_wb.hex  
 counter_wb.hex loaded into memory  
 Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
 VCD info: dumpfile counter_wb.vcd opened for output.  
 Monitor: MPRJ-Logic WB Started  
 Monitor: Mega-Project WB (RTL) Passed  
-caravel-soc/testbench/counter_wb$ gtkwave waveform.gtkw  
+$ gtkwave waveform.gtkw  
 ```
 ![counter_wb_waveform](https://user-images.githubusercontent.com/11850122/220597221-3a266f07-1525-4c64-92a8-216b5fe82e25.png)
    
@@ -147,7 +149,8 @@ caravel-soc/testbench/gcd_la/run_sim
 caravel-soc/testbench/gcd_la/waveform.gtkw  
 ```
 ```console
-caravel-soc/testbench/gcd_la$ ./run_sim  
+$ cd ~/caravel-soc/testbench/gcd_la
+$ ./run_sim 
 Reading gcd_la.hex  
 gcd_la.hex loaded into memory  
 Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13  
@@ -162,7 +165,7 @@ LA Test seq_gcd(1924134885, 3151131255)=135 started
 LA Test seq_gcd(1924134885, 3151131255)=135 passed  
 LA Test seq_gcd(992211318, 512609597)=1 started  
 LA Test seq_gcd(992211318, 512609597)=1 passed  
-caravel-soc/testbench/gcd_la$ gtkwave waveform.gtkw  
+$ gtkwave waveform.gtkw
 ```
 ![gcd_la_waveform](https://user-images.githubusercontent.com/11850122/220589367-339a7e00-ca5c-4070-a38a-cce3eefb4441.png)
 
