@@ -30,7 +30,7 @@ $ sudo tar -xzf /tmp/riscv32-unknown-elf.gcc-12.1.0.tar.gz -C /opt/riscv
 $ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_script.php?src_id=28365
 $ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
 $ python /opt/vtags-3.11/vim_glb_config.py
-$ git clone https://github.com/bol-edu/caravel-soc
+$ git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
 $ cd caravel-soc/
 $ python /opt/vtags-3.11/vtags.py
 $ rm -rf vtags.db/
@@ -47,7 +47,7 @@ validate your [setup & config](https://github.com/bol-edu/caravel-soc/blob/main/
 ## Setup GDBWave - Post Simulation Debugging
 ```console
 $ sudo apt install make g++ zlib1g-dev gdb -y
-$ git clone https://github.com/tomverbeure/gdbwave.git
+$ git clone https://github.com/tomverbeure/gdbwave.git ~/gdbwave
 $ pushd ~/gdbwave/src && make && popd
 ```
 validate your [setup gdbwave - post simulation debugging](https://github.com/bol-edu/caravel-soc/blob/main/setup_gdbwave.log)
