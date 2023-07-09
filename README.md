@@ -33,6 +33,7 @@ $ python /opt/vtags-3.11/vim_glb_config.py
 $ git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
 $ cd ~/caravel-soc/
 $ python /opt/vtags-3.11/vtags.py
+$ cd ~/ && rm -rf ~/caravel-soc/
 $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
 $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
 $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
@@ -76,9 +77,9 @@ In each testbench subdirectory contains
 7. Make files and config file for gdb and gdbwave debugging. 
 8. Run clean script removes all simulation and debugging objects. The run debugging script use cases will be demonstrated in next section.
 
-Git Clone Clean Caravel SoC before Running Testbenches
+Git Clone Caravel SoC before Running Testbenches
 ```console
-$ sudo rm -rf ~/caravel-soc && git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
+$ git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
 ```
 
 ### Counter with (LA) logic analyzer interface 
