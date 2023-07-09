@@ -346,4 +346,4 @@ found *clock_core* declaration at chip_io.v:72
 
 ## Research Papers
 * [GHAZI: An Open-Source ASIC Implementation of RISC-V based SoC based SoC, 2022](https://www.techrxiv.org/articles/preprint/GHAZI_An_Open-Source_ASIC_Implementation_of_RISC-V_based_SoC/21770456)
-* [IBTIDA: Fully open-source ASIC implementation of Chisel-generated System on a Chip, 2021](https://www.researchgate.net/profile/Sajjad-Ahmed-23/publication/355051535_IBTIDA_Fully_open-source_ASIC_implementation_of_Chisel-generated_System_on_a_Chip/links/6176fc903c987366c3e65a68/IBTIDA-Fully-open-source-ASIC-implementation-of-Chisel-generated-System-on-a-Chip.pdf)
+* [IBTIDA: Fully open-source ASIC implementation of Chisel-generated System on a Chip, 2021](https://www.researchgate.net/profile/Sajjad-Ahmed-23/publication/355051535_IBTIDA_Fully_open-source_ASIC_implementation_of_Chisel-generated_System_on_a_Chip/links/6176fc903c987366c3e65a68/IBTIDA-Fully-open-source-ASIC-implementation-of-Chisel-generated-System-on-a-Chip.pdf) 
