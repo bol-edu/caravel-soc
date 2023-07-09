@@ -31,12 +31,8 @@ $ sudo wget -O /tmp/vtags-3.11.tar.gz https://www.vim.org/scripts/download_scrip
 $ sudo tar -xzf /tmp/vtags-3.11.tar.gz -C /opt
 $ python /opt/vtags-3.11/vim_glb_config.py
 $ git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
-$ cd caravel-soc/
+$ cd ~/caravel-soc/
 $ python /opt/vtags-3.11/vtags.py
-$ rm -rf vtags.db/
-$ chmod +x ~/caravel-soc/testbench/counter_la/run_sim ~/caravel-soc/testbench/counter_wb/run_sim ~/caravel-soc/testbench/gcd_la/run_sim
-$ chmod +x ~/caravel-soc/testbench/counter_la/run_debug ~/caravel-soc/testbench/counter_wb/run_debug ~/caravel-soc/testbench/gcd_la/run_debug
-$ chmod +x ~/caravel-soc/testbench/counter_la/run_clean ~/caravel-soc/testbench/counter_wb/run_clean ~/caravel-soc/testbench/gcd_la/run_clean
 $ echo 'export PATH=$PATH:/opt/riscv/bin' >> ~/.bashrc
 $ echo 'alias vtags="python /opt/vtags-3.11/vtags.py"' >> ~/.bashrc
 $ echo 'source /opt/vtags-3.11/vtags_vim_api.vim' >> ~/.vimrc
@@ -79,6 +75,11 @@ In each testbench subdirectory contains
 6. Run debugging script produces gdb elf file, fst waveform file and starts gdbwave service (gdb remote target). 
 7. Make files and config file for gdb and gdbwave debugging. 
 8. Run clean script removes all simulation and debugging objects. The run debugging script use cases will be demonstrated in next section.
+
+Git Clone Clean Caravel SoC before Running Testbenches
+```console
+$ sudo rm -rf ~/caravel-soc && git clone https://github.com/bol-edu/caravel-soc ~/caravel-soc
+```
 
 ### Counter with (LA) logic analyzer interface 
 * 32-bit LA input  
